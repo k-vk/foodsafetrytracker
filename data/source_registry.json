@@ -1,0 +1,22 @@
+{
+  "primary": [
+    "FSSAI",
+    "State Food Safety Departments",
+    "Municipal food safety / health departments",
+    "Official inspection orders, notices, seizure records and laboratory reports"
+  ],
+  "secondary": [
+    "Reputable newspapers",
+    "Wire services",
+    "Established local news organizations"
+  ],
+  "social": [
+    "Official government social-media accounts only; use as a pointer to the underlying official action where possible"
+  ],
+  "excluded_as_primary_evidence": [
+    "Anonymous social-media posts",
+    "User reviews",
+    "Unverified allegations",
+    "Competitor claims"
+  ]
+}

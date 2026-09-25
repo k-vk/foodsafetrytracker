@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Food Safety Tracker — India</title>
+<style>
+body{font-family:system-ui,-apple-system,sans-serif;margin:0;background:#f6f7f9;color:#17202a}
+header{background:#111827;color:#fff;padding:30px 5vw}main{max-width:1450px;margin:24px auto;padding:0 20px}
+.controls{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-bottom:18px}
+input,select{padding:12px;border:1px solid #d1d5db;border-radius:8px;background:white}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px}
+.num{font-size:25px;font-weight:700}.muted{color:#6b7280;font-size:13px}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:12px;border-bottom:1px solid #eee;vertical-align:top}
+th{background:#f1f5f9;position:sticky;top:0}.tag{display:inline-block;background:#eef2ff;padding:3px 7px;border-radius:999px;margin:2px;font-size:12px}
+.positive{background:#ecfdf5}.notice{background:#fff7ed}.source{font-size:12px}
+@media(max-width:800px){.controls,.stats{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header><h1>Food Safety Tracker — India</h1>
+<div>Searchable public record of food-safety inspections, findings, actions and compliance updates.</div></header>
+<main>
+<div class="stats" id="stats"></div>
+<div class="controls">
+<input id="q" placeholder="Search restaurant, city, finding, authority...">
+<select id="state"><option value="">All states</option></select>
+<select id="type"><option value="">All records</option><option value="positive">Compliance / positive</option><option value="enforcement">Enforcement / finding</option></select>
+</div>
+<div class="card" style="overflow:auto"><table><thead><tr>
+<th>Establishment</th><th>Location</th><th>Date</th><th>Findings / result</th><th>Action</th><th>Evidence</th>
+</tr></thead><tbody id="rows"></tbody></table></div>
+<div class="card" style="margin-top:18px">
+<strong>How to read this database</strong>
+<p class="muted">A listing records what an identified source reported or what an official record documents. It is not a permanent judgement about a business. Primary government records are preferred. News-only records are labelled as such. Follow-up inspections, corrections and licence restoration are retained so the history is not one-sided.</p>
+<p class="muted">The tracker does not publish anonymous allegations, user reviews or unverified social-media claims as findings.</p>
+</div>
+</main>
+<script>
+fetch('food_safety_incidents.json').then(r=>r.json()).then(data=>{
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const states=[...new Set(data.map(x=>x.state).filter(Boolean))].sort();
+state.innerHTML+='<option>'+states.join('</option><option>')+'</option>';
+function isPositive(x){return /passed|compliant|restored|corrective/i.test((x.finding_categories||'')+' '+(x.action_taken||''))}
+function render(){
+let s=state.value,t=type.value,qv=q.value.toLowerCase();
+let d=data.filter(x=>(!s||x.state===s)&&(!t||(t==='positive'?isPositive(x):!isPositive(x)))&&Object.values(x).join(' ').toLowerCase().includes(qv));
+rows.innerHTML=d.map(x=>{
+let pos=isPositive(x);
+return '<tr class="'+(pos?'positive':'')+'"><td><b>'+esc(x.restaurant_name)+'</b><br><span class="muted">'+esc(x.authority)+'</span></td><td>'+esc(x.location)+'</td><td>'+esc(x.date_reported)+'</td><td>'+esc(x.finding)+'<br>'+String(x.finding_categories||'').split('; ').filter(Boolean).map(y=>'<span class="tag">'+esc(y)+'</span>').join('')+'</td><td>'+esc(x.action_taken)+'</td><td><div class="source">'+esc(x.verification_status)+'</div><a target="_blank" rel="noopener" href="'+esc(x.source_url)+'">'+esc(x.source_name)+'</a></td></tr>'
+}).join('');
+stats.innerHTML=[['Records',d.length],['States',new Set(d.map(x=>x.state).filter(Boolean)).size],['Official-source records',d.filter(x=>x.source_type==='Official').length],['Compliance / positive',d.filter(isPositive).length]].map(a=>'<div class="card"><div class="num">'+a[1]+'</div><div class="muted">'+a[0]+'</div></div>').join('')
+}
+q.oninput=render;state.onchange=render;type.onchange=render;render();
+});
+</script></body></html>
