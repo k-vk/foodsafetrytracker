@@ -34,7 +34,8 @@ Curation notes:
 - Preview the layout with fictional records by adding `?demo=1` to the URL (shown under a "demo mode" banner; never shown otherwise).
 
 ## Update script changes (`scripts/update_tracker.py`)
-- Resolves Google News redirect links to the publisher URL, so `source_url` and `source_type` reflect the real outlet.
+- Decodes Google News links to the publisher URL (via `googlenewsdecoder`); items whose link can't be resolved are skipped rather than published.
+- Auto-publishes only official-source items. News items found by the daily run go to `data/review_queue.csv` for a person to add the establishment, city/state and authority before moving them into the dataset.
 - Expanded list of recognised news domains (includes all outlets cited in the curated records).
 - De-duplicates on source URL + establishment name, and skips articles already covered by curated or review-queue records, so repeat runs don't add duplicates.
 - Sorts the published dataset newest first.

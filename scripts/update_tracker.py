@@ -71,11 +71,25 @@ def categories(text):
 def actions(text):
     t=text.lower()
     return [x for x in ACTIONS if x in t]
-def article(url):
-    """Return (text, final_url). final_url is the publisher URL after redirects."""
+def resolve_google_news(url):
+    """Google News RSS links no longer redirect over plain HTTP; decode them to the publisher URL."""
+    if "news.google.com" not in url: return url
     try:
-        r=requests.get(url,timeout=20,headers={"User-Agent":"FoodSafetyTracker/1.0"})
+        from googlenewsdecoder import gnewsdecoder
+        res=gnewsdecoder(url, interval=1)
+        if res.get("status") or res.get("success"):
+            return res.get("decoded_url") or url
+    except Exception:
+        pass
+    return url
+def article(url):
+    """Return (text, final_url). final_url is the publisher URL, or "" if it could not be resolved."""
+    url=resolve_google_news(url)
+    if "news.google.com" in url: return "", ""
+    try:
+        r=requests.get(url,timeout=20,headers={"User-Agent":"Mozilla/5.0 (FoodSafetyTracker/1.0)"})
         r.raise_for_status()
+        if "news.google.com" in r.url: return "", ""
         soup=BeautifulSoup(r.text,"html.parser")
         for x in soup(["script","style","noscript"]): x.decompose()
         return clean(soup.get_text(" ")), r.url
@@ -110,7 +124,8 @@ for q in QUERIES:
         combined=title+" "+text
         cats=categories(combined); acts=actions(combined)
         st=source_type(url)
-        if not text or not cats:
+        # Skip anything we could not actually read from the publisher (e.g. unresolved Google News links).
+        if not url or len(text)<300 or not cats:
             continue
         name=clean(title.split(" - ")[0])
         date=(e.get("published_parsed") and datetime(*e.published_parsed[:6]).date().isoformat()) or datetime.now().date().isoformat()
@@ -128,14 +143,18 @@ for q in QUERIES:
         key=(url,name)
         # Skip articles already covered by curated records (they are split per establishment by hand).
         if key in existing or url in existing_urls: continue
-        # Conservative publication rule: official OR explicit action + finding.
-        if st=="Official" or (acts and cats):
+        # Conservative publication rule: only official sources publish automatically.
+        # News items go to the review queue: the headline is not an establishment name and
+        # city/state/authority are not extracted, so a person must fill those in before publishing.
+        if st=="Official" and acts:
             rows.append(row); existing.add(key); existing_urls.add(url)
         else:
             review.append(row); existing_urls.add(url)
 
 # Remove seed rows from public dataset once real collection starts.
 rows=[r for r in rows if r.get("verification_status")!="Seed / not for publication"]
+# Guard: never publish rows without a publisher URL or an establishment location.
+rows=[r for r in rows if "news.google.com" not in r.get("source_url","") and r.get("state")]
 rows.sort(key=lambda r:(r.get("date_reported",""),r.get("incident_id","")),reverse=True)
 
 with open(CSV_PATH,"w",newline="",encoding="utf-8") as f:
