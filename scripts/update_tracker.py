@@ -52,6 +52,12 @@ ACTIONS = ["seized","seizure","destroyed","disposed","notice issued","notice ser
            "licence suspended","license suspended","closed","closure","penalty","fine",
            "prosecution","sample collected","samples collected","inspection","raided","raid"]
 
+# Reputable news outlets (includes the outlets cited in the curated September 2026 records).
+NEWS_DOMAINS = ["thehindu.com","indianexpress.com","hindustantimes.com","timesofindia.indiatimes.com",
+                "deccanchronicle.com","deccanherald.com","telanganatoday.com","thehansindia.com",
+                "thesouthfirst.com","newsmeter.in","aninews.in","thefederal.com","newsgram.com",
+                "mypunepulse.com","onmanorama.com","newindianexpress.com","ndtv.com"]
+
 FIELDS = ["incident_id","restaurant_name","location","city","state","date_reported","date_inspection",
           "authority","finding","finding_categories","action_taken","samples_collected","closure_status",
           "verification_status","source_name","source_type","source_url","evidence_excerpt","last_updated"]
@@ -66,18 +72,19 @@ def actions(text):
     t=text.lower()
     return [x for x in ACTIONS if x in t]
 def article(url):
+    """Return (text, final_url). final_url is the publisher URL after redirects."""
     try:
         r=requests.get(url,timeout=20,headers={"User-Agent":"FoodSafetyTracker/1.0"})
         r.raise_for_status()
         soup=BeautifulSoup(r.text,"html.parser")
         for x in soup(["script","style","noscript"]): x.decompose()
-        return clean(soup.get_text(" "))
+        return clean(soup.get_text(" ")), r.url
     except Exception:
-        return ""
+        return "", url
 def source_type(url):
     u=url.lower()
     if ".gov.in" in u or "fssai.gov.in" in u or "fssai.in" in u: return "Official"
-    if any(d in u for d in ["thehindu.com","indianexpress.com","hindustantimes.com","timesofindia.indiatimes.com","deccanchronicle.com"]): return "News"
+    if any(d in u for d in NEWS_DOMAINS): return "News"
     return "Other"
 
 def make_id(url, date, name):
@@ -89,7 +96,9 @@ def load_csv(path):
 
 rows=load_csv(CSV_PATH)
 review=load_csv(REVIEW_PATH)
-existing={(r.get("source_url",""),r.get("date_reported","")) for r in rows}
+# Dedupe on source URL + establishment name: curated records share one article across several establishments.
+existing={(r.get("source_url",""),r.get("restaurant_name","")) for r in rows}
+existing_urls={r.get("source_url","") for r in rows+review}
 
 for q in QUERIES:
     feed=feedparser.parse("https://news.google.com/rss/search?q="+requests.utils.quote(q)+"&hl=en-IN&gl=IN&ceid=IN:en")
@@ -97,7 +106,7 @@ for q in QUERIES:
         url=e.get("link","")
         title=clean(e.get("title",""))
         pub=e.get("published","")
-        text=article(url)
+        text,url=article(url)
         combined=title+" "+text
         cats=categories(combined); acts=actions(combined)
         st=source_type(url)
@@ -116,16 +125,18 @@ for q in QUERIES:
             "source_type":st,"source_url":url,"evidence_excerpt":evidence,
             "last_updated":datetime.now().date().isoformat()
         }
-        key=(url,date)
-        if key in existing: continue
+        key=(url,name)
+        # Skip articles already covered by curated records (they are split per establishment by hand).
+        if key in existing or url in existing_urls: continue
         # Conservative publication rule: official OR explicit action + finding.
         if st=="Official" or (acts and cats):
-            rows.append(row); existing.add(key)
+            rows.append(row); existing.add(key); existing_urls.add(url)
         else:
-            review.append(row)
+            review.append(row); existing_urls.add(url)
 
 # Remove seed rows from public dataset once real collection starts.
 rows=[r for r in rows if r.get("verification_status")!="Seed / not for publication"]
+rows.sort(key=lambda r:(r.get("date_reported",""),r.get("incident_id","")),reverse=True)
 
 with open(CSV_PATH,"w",newline="",encoding="utf-8") as f:
     w=csv.DictWriter(f,fieldnames=FIELDS); w.writeheader(); w.writerows(rows)
