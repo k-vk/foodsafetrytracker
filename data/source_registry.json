@@ -1,0 +1,11 @@
+{
+  "source_hierarchy": [
+    "Official FSSAI records",
+    "State food-safety departments",
+    "Municipal/health authorities",
+    "Official inspection, seizure or laboratory records",
+    "Reputable news reports",
+    "Official government social accounts as pointers to primary action"
+  ],
+  "publication_rule": "Prefer primary/official evidence. News is discovery unless adequately supported. Uncertain records go to review_queue.csv."
+}
