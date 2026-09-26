@@ -42,7 +42,19 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
-
+      -  name: Verify public data
+          run: |
+          python - <<'PY'
+          import json
+          path = "public/food_safety_incidents.json"
+          with open(path, encoding="utf-8") as f:
+          data = json.load(f)
+         print("================================")
+         print(f"Records in Pages JSON: {len(data)}")
+         print("First record:", data[0]["incident_id"])
+         print("Last record:", data[-1]["incident_id"])
+         print("================================")
+         PY
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
