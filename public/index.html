@@ -88,7 +88,35 @@ section.about h2{font-size:22px;margin:0 0 16px;letter-spacing:-.01em}
 .cols li{margin:4px 0}
 footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);font-size:13px}
 .theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;padding:6px 9px;cursor:pointer;margin-left:14px}
-@media (max-width:900px){.layout{grid-template-columns:1fr}aside{position:static}.stats{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}nav a{display:none}}
+.hist{margin-top:12px}
+.hist-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:999px;padding:3px 11px 3px 8px;font:inherit;font-size:12px;cursor:pointer}
+.hist-btn b{font-variant-numeric:tabular-nums}
+.hist-btn.repeat{background:var(--warn-soft);border-color:transparent;color:var(--warn)}
+.hist-btn svg{flex:none;transition:transform .15s}
+.hist-btn[aria-expanded="true"] svg{transform:rotate(90deg)}
+.hist-list{list-style:none;margin:8px 0 0;padding:0;border:1px solid var(--line);border-radius:10px;font-size:13px}
+.hist-list li{padding:8px 12px;border-top:1px solid var(--line)}
+.hist-list li:first-child{border-top:0}
+.hist-list li.current{background:var(--surface-2)}
+.hist-list .hd{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-variant-numeric:tabular-nums}
+.hist-list .tag{font-size:11px;padding:1px 7px}
+.menu-btn,.drawer-head,.drawer-nav,.drawer-foot,.scrim{display:none}
+.menu-btn{position:relative;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;padding:6px 9px;cursor:pointer;margin-left:8px}
+.menu-btn .dot{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--accent);color:var(--surface);font-size:11px;line-height:18px;font-weight:650}
+.icon-btn{border:0;background:none;color:var(--text);padding:6px;cursor:pointer;border-radius:8px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}nav a{display:none}
+  .menu-btn{display:inline-flex}
+  aside{position:fixed;top:0;left:0;bottom:0;z-index:50;width:min(340px,88vw);padding:16px;overflow-y:auto;background:var(--bg);border-right:1px solid var(--line);transform:translateX(-100%);visibility:hidden;transition:transform .2s ease,visibility 0s .2s}
+  body.menu-open aside{transform:none;visibility:visible;transition:transform .2s ease}
+  body.menu-open{overflow:hidden}
+  body.menu-open .scrim{display:block;position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.45)}
+  .drawer-head{display:flex;justify-content:space-between;align-items:center;font-weight:650}
+  .drawer-nav{display:flex;flex-direction:column}
+  .drawer-nav a{padding:10px 4px;text-decoration:none;color:var(--text);border-bottom:1px solid var(--line)}
+  .drawer-foot{display:block;position:sticky;bottom:-16px;margin:0 -16px -16px;padding:12px 16px;background:var(--bg);border-top:1px solid var(--line)}
+  .drawer-foot button{width:100%;padding:11px;border:0;border-radius:8px;background:var(--accent);color:var(--surface);font:inherit;font-weight:600;cursor:pointer}
+}
+@media (prefers-reduced-motion:reduce){aside{transition:none!important}}
 </style>
 </head>
 <body>
@@ -102,6 +130,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);f
     <div style="display:flex;align-items:center">
       <nav><a href="#records">Records</a><a href="review.html">Review queue</a><a href="#method">Method</a></nav>
       <button class="theme-btn" id="themeBtn" aria-label="Toggle colour theme"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:block"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu and filters" aria-controls="drawer" aria-expanded="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="display:block"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="dot" id="filterDot" hidden></span></button>
     </div>
   </div>
 </header>
@@ -121,7 +150,12 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);f
   </section>
 
   <div class="layout" id="records">
-    <aside>
+    <div class="scrim" id="scrim"></div>
+    <aside id="drawer" aria-label="Menu and filters">
+      <div class="drawer-head">Menu &amp; filters
+        <button class="icon-btn" id="drawerClose" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="display:block"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <nav class="drawer-nav" aria-label="Pages"><a href="#records">Records</a><a href="review.html">Review queue</a><a href="#method">Method</a></nav>
       <div class="panel">
         <h3>Filter</h3>
         <label for="q">Search</label>
@@ -144,6 +178,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);f
         <h3>Finding categories</h3>
         <div class="cats" id="cats"></div>
       </div>
+      <div class="drawer-foot"><button id="drawerDone">Show results</button></div>
     </aside>
 
     <div>
@@ -208,7 +243,17 @@ const cats=r=>(r.finding_categories||"").split(";").map(s=>s.trim()).filter(Bool
 const isPositive=r=>{const x=(r.finding_categories+" "+r.finding+" "+r.action_taken).toLowerCase();return POS_TERMS.some(t=>x.includes(t))};
 const fmtDate=d=>{if(!d)return"";const t=new Date(d+"T00:00:00");return isNaN(t)?d:t.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"})};
 
-let data=[],state={q:"",st:"",src:"",type:"",cat:"",sort:"new"},shown=PAGE;
+let data=[],state={q:"",st:"",src:"",type:"",cat:"",sort:"new"},shown=PAGE,groups=new Map();
+
+// Records for the same establishment: same normalised name in the same city (branches of a chain stay separate).
+// Unnamed establishments are never grouped, since they may be different premises.
+const norm=s=>String(s||"").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g,"");
+const estKey=r=>/name not published|unnamed/i.test(r.restaurant_name||"")||!norm(r.restaurant_name)?"id:"+r.incident_id:norm(r.restaurant_name)+"|"+norm(r.city||r.state);
+function buildGroups(){
+  groups=new Map();
+  data.forEach(r=>{const k=estKey(r);if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r)});
+  groups.forEach(g=>g.sort((a,b)=>(b.date_reported||"").localeCompare(a.date_reported||"")));
+}
 
 // theme toggle (per-viewer preference)
 const root=document.documentElement;
@@ -248,11 +293,32 @@ function card(r){
     <p class="finding">${esc(r.finding)}</p>
     <div class="tags">${badge(r)}${cats(r).map(c=>`<span class="tag${POSITIVE.includes(c)?" pos":""}">${esc(c)}</span>`).join("")}</div>
     ${facts.length?`<dl class="facts">${facts.map(f=>`<div><dt>${f[0]}</dt><dd>${esc(f[1])}</dd></div>`).join("")}</dl>`:""}
+    ${history(r)}
     <details><summary>Evidence &amp; source</summary>
       ${r.evidence_excerpt?`<blockquote>${esc(r.evidence_excerpt)}</blockquote>`:""}
       <p style="margin:8px 0 0">${esc(r.source_name||"Source")}${url?` · <a href="${esc(url)}" target="_blank" rel="noopener">Open source ↗</a>`:""}${r.last_updated?` · Record updated ${esc(fmtDate(r.last_updated))}`:""}${r.incident_id?` · <span style="color:var(--muted)">${esc(r.incident_id)}</span>`:""}</p>
     </details>
   </article>`;
+}
+
+// How many records with findings this establishment has, with every record and its source.
+function history(r){
+  const g=groups.get(estKey(r))||[r];
+  const n=g.filter(x=>!isPositive(x)).length;
+  const label=n?`<b>${n}</b> record${n===1?"":"s"} with findings`:`<b>${g.length}</b> compliance record${g.length===1?"":"s"}`;
+  const srcCount=new Set(g.map(x=>x.source_url||x.incident_id)).size;
+  const listId="h-"+esc(r.incident_id);
+  const items=g.map(x=>{
+    const url=safeUrl(x.source_url);
+    return `<li${x===r?' class="current"':""}>
+      <div class="hd"><span>${esc(fmtDate(x.date_reported))}${x===r?" · this record":""}</span>${isPositive(x)?'<span class="tag pos">Compliance</span>':""}</div>
+      <div>${esc(x.finding)}</div>
+      <div class="meta">${esc(x.source_name||"Source")}${url?` · <a href="${esc(url)}" target="_blank" rel="noopener">Open source ↗</a>`:""}</div>
+    </li>`}).join("");
+  return `<div class="hist">
+    <button class="hist-btn${n>1?" repeat":""}" aria-expanded="false" aria-controls="${listId}" title="Records for this establishment in the tracker"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>${label} · ${srcCount} source${srcCount===1?"":"s"}</button>
+    <ul class="hist-list" id="${listId}" hidden>${items}</ul>
+  </div>`;
 }
 
 function renderCats(){
@@ -274,11 +340,16 @@ function render(){
     $("list").innerHTML=rows.slice(0,shown).map(card).join("");
   }
   $("more").hidden=rows.length<=shown;
+  const active=[state.q,state.st,state.src,state.type,state.cat].filter(Boolean).length;
+  $("filterDot").hidden=!active;$("filterDot").textContent=active;
+  $("menuBtn").setAttribute("aria-label",active?`Menu and filters, ${active} active`:"Menu and filters");
+  $("drawerDone").textContent=data.length?`Show ${rows.length} record${rows.length===1?"":"s"}`:"Close";
   renderCats();
 }
 
 function init(d){
   data=Array.isArray(d)?d:[];
+  buildGroups();
   $("sCount").textContent=data.length;
   const states=[...new Set(data.map(x=>x.state).filter(Boolean))].sort();
   $("sStates").textContent=states.length;
@@ -300,6 +371,25 @@ $("typeSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{
   state.type=b.dataset.v;shown=PAGE;render();
 });
 $("more").onclick=()=>{shown+=PAGE;render()};
+$("list").addEventListener("click",e=>{
+  const b=e.target.closest(".hist-btn");if(!b)return;
+  const open=b.getAttribute("aria-expanded")!=="true";
+  b.setAttribute("aria-expanded",open);
+  document.getElementById(b.getAttribute("aria-controls")).hidden=!open;
+});
+
+// phone: filters, categories and page links live in a slide-in drawer
+const mobile=matchMedia("(max-width:900px)");
+function setMenu(open){
+  document.body.classList.toggle("menu-open",open);
+  $("menuBtn").setAttribute("aria-expanded",open);
+  if(open)$("drawerClose").focus();else if(mobile.matches)$("menuBtn").focus();
+}
+$("menuBtn").onclick=()=>setMenu(true);
+$("drawerClose").onclick=$("drawerDone").onclick=$("scrim").onclick=()=>setMenu(false);
+document.querySelectorAll(".drawer-nav a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&document.body.classList.contains("menu-open"))setMenu(false)});
+mobile.addEventListener("change",()=>{if(!mobile.matches&&document.body.classList.contains("menu-open"))setMenu(false)});
 $("reset").onclick=()=>{
   state={q:"",st:"",src:"",type:"",cat:"",sort:state.sort};shown=PAGE;
   $("q").value="";$("state").value="";$("source").value="";
@@ -311,7 +401,8 @@ $("reset").onclick=()=>{
 const DEMO=[
  {incident_id:"DEMO-001",restaurant_name:"Sample Eatery A (fictional)",city:"Hyderabad",state:"Telangana",date_reported:"2026-09-20",date_inspection:"2026-09-19",authority:"Food Safety Department",finding:"Placeholder: inspectors reported stored items past expiry and pest activity in the kitchen.",finding_categories:"Expired food; Pest infestation",action_taken:"notice issued; samples collected",samples_collected:"2",closure_status:"Awaiting follow-up",verification_status:"Official source",source_name:"Demo source",source_type:"Official",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-09-24"},
  {incident_id:"DEMO-002",restaurant_name:"Sample Kitchen B (fictional)",city:"Pune",state:"Maharashtra",date_reported:"2026-09-15",authority:"FSSAI",finding:"Placeholder: follow-up inspection found earlier issues rectified.",finding_categories:"Corrective action completed; Poor hygiene / sanitation",action_taken:"inspection",closure_status:"Closed — compliant",verification_status:"News report — corroboration recommended",source_name:"Demo source",source_type:"News",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-09-22"},
- {incident_id:"DEMO-003",restaurant_name:"Sample Café C (fictional)",city:"Kochi",state:"Kerala",date_reported:"2026-09-10",authority:"Commissionerate of Food Safety",finding:"Placeholder: licence suspended over missing registration; later restored.",finding_categories:"Licensing / registration; Licence restored / suspension revoked",action_taken:"licence suspended",closure_status:"Licence restored",verification_status:"Official source",source_name:"Demo source",source_type:"Official",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-09-18"}
+ {incident_id:"DEMO-003",restaurant_name:"Sample Café C (fictional)",city:"Kochi",state:"Kerala",date_reported:"2026-09-10",authority:"Commissionerate of Food Safety",finding:"Placeholder: licence suspended over missing registration; later restored.",finding_categories:"Licensing / registration; Licence restored / suspension revoked",action_taken:"licence suspended",closure_status:"Licence restored",verification_status:"Official source",source_name:"Demo source",source_type:"Official",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-09-18"},
+ {incident_id:"DEMO-004",restaurant_name:"Sample Eatery A (fictional)",city:"Hyderabad",state:"Telangana",date_reported:"2026-08-02",authority:"GHMC",finding:"Placeholder: earlier inspection reported poor hygiene in the storage area.",finding_categories:"Poor hygiene / sanitation",action_taken:"notice issued",verification_status:"News report — corroboration recommended",source_name:"Demo news source",source_type:"News",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-08-03"}
 ];
 if(new URLSearchParams(location.search).has("demo")){$("demoBanner").hidden=false;init(DEMO);return}
 
