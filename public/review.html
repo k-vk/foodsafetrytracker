@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Review Queue — Food Safety Tracker</title>
+<meta name="description" content="Unverified news items awaiting review before publication in the Food Safety Tracker.">
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --bg:#f6f5f1;--surface:#ffffff;--surface-2:#f0efea;--text:#1d1d1b;--muted:#64625c;--line:#e3e1da;
+  --accent:#1f6f5c;--accent-soft:#e2f0eb;--warn:#9a5b12;--warn-soft:#fbefdc;--info:#2f5b8f;--info-soft:#e4ecf6;
+  --pos:#2e7d32;--pos-soft:#e5f3e6;--shadow:0 1px 2px rgba(0,0,0,.04),0 2px 8px rgba(0,0,0,.04);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141513;--surface:#1c1d1b;--surface-2:#252623;--text:#ecebe6;--muted:#a3a19a;--line:#33342f;
+  --accent:#5fc2a6;--accent-soft:#1d332c;--warn:#e8b36a;--warn-soft:#3a2d1a;--info:#8db4e6;--info-soft:#1d2a3a;
+  --pos:#7fcf83;--pos-soft:#1e3320;--shadow:none;}}
+:root[data-theme="dark"]{
+  --bg:#141513;--surface:#1c1d1b;--surface-2:#252623;--text:#ecebe6;--muted:#a3a19a;--line:#33342f;
+  --accent:#5fc2a6;--accent-soft:#1d332c;--warn:#e8b36a;--warn-soft:#3a2d1a;--info:#8db4e6;--info-soft:#1d2a3a;
+  --pos:#7fcf83;--pos-soft:#1e3320;--shadow:none;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:650;letter-spacing:-.01em}
+.brand svg{flex:none}
+nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+nav a:hover{color:var(--text)}
+.hero{padding:40px 0 24px}
+.hero h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em;max-width:22ch}
+.hero p{color:var(--muted);max-width:70ch;margin:0}
+.updated{margin-top:14px;font-size:13px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 28px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:28px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:13px}
+.layout{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+.panel h3{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+label{display:block;font-size:13px;color:var(--muted);margin:10px 0 4px}
+input,select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--text);font:inherit}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.seg{display:flex;background:var(--surface-2);border-radius:8px;padding:3px;gap:3px}
+.seg button{flex:1;border:0;background:transparent;color:var(--muted);padding:6px 4px;border-radius:6px;font:inherit;font-size:13px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+.reset{margin-top:12px;background:none;border:0;color:var(--accent);cursor:pointer;padding:0;font:inherit;font-size:13px}
+.cats{display:flex;flex-direction:column;gap:6px}
+.cat{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:13px;cursor:pointer;background:none;border:0;color:var(--text);text-align:left;padding:4px 0;font-family:inherit}
+.cat .bar{grid-column:1/3;height:4px;background:var(--surface-2);border-radius:2px;overflow:hidden}
+.cat .bar i{display:block;height:100%;background:var(--accent)}
+.cat.active{color:var(--accent);font-weight:600}
+.cat small{color:var(--muted);font-variant-numeric:tabular-nums}
+.results-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px;flex-wrap:wrap}
+.results-head p{margin:0;color:var(--muted);font-size:14px}
+.list{display:flex;flex-direction:column;gap:12px}
+.rec{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.rec-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.rec h4{margin:0;font-size:16px;line-height:1.35}
+.meta{color:var(--muted);font-size:13px;margin-top:2px}
+.date{font-size:13px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.finding{margin:10px 0 8px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;padding:2px 9px;border-radius:999px;background:var(--surface-2);color:var(--text)}
+.tag.pos{background:var(--pos-soft);color:var(--pos)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px 16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:13px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0}
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:2px 9px;border-radius:999px;font-weight:550}
+.badge.official{background:var(--accent-soft);color:var(--accent)}
+.badge.news{background:var(--warn-soft);color:var(--warn)}
+.badge.other{background:var(--info-soft);color:var(--info)}
+details{margin-top:10px;font-size:13px}
+summary{cursor:pointer;color:var(--accent)}
+blockquote{margin:8px 0 0;padding:10px 12px;border-left:3px solid var(--line);background:var(--surface-2);border-radius:0 8px 8px 0;color:var(--muted)}
+.empty{text-align:center;padding:48px 20px;background:var(--surface);border:1px dashed var(--line);border-radius:12px;color:var(--muted)}
+.empty h4{color:var(--text);margin:0 0 6px}
+.more{display:block;margin:16px auto 0;padding:9px 18px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;cursor:pointer;font:inherit}
+.demo-banner{background:var(--warn-soft);color:var(--warn);padding:10px 16px;text-align:center;font-size:14px}
+section.about{padding:48px 0 24px}
+section.about h2{font-size:22px;margin:0 0 16px;letter-spacing:-.01em}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cols .panel h3{color:var(--text);text-transform:none;letter-spacing:0;font-size:15px}
+.cols ol,.cols ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+.cols li{margin:4px 0}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);font-size:13px}
+.theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;padding:6px 9px;cursor:pointer;margin-left:14px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}aside{position:static}.stats{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}nav a{display:none}}
+.notice{background:var(--warn-soft);color:var(--warn);border-radius:12px;padding:14px 16px;font-size:14px;margin:0 0 20px}
+.notice a{color:inherit}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-bottom:16px}
+.filters label{margin-top:0}
+nav a[aria-current="page"]{color:var(--text);font-weight:600}
+.tag.auto{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+.stat b.small{font-size:20px;line-height:1.7}
+@media (max-width:700px){.filters{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      Food Safety Tracker <span style="color:var(--muted);font-weight:400">· India</span>
+    </div>
+    <div style="display:flex;align-items:center">
+      <nav><a href="index.html#records">Records</a><a href="review.html" aria-current="page">Review queue</a><a href="index.html#method">Method</a></nav>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle colour theme"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:block"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Review queue</h1>
+    <p>News items the daily collector found but could not publish automatically. Each one needs a person to confirm the establishment, location and authority before it can become a published record.</p>
+    <div class="updated" id="updated"></div>
+  </section>
+
+  <div class="notice" role="note"><b>Unverified.</b> These are headlines and article excerpts, not findings about any establishment. Many are general news about food-safety enforcement. Categories are matched automatically from keywords and are often wrong. <a href="index.html">See published records →</a></div>
+
+  <section class="stats" aria-label="Summary">
+    <div class="stat"><b id="sCount">–</b><span>Items awaiting review</span></div>
+    <div class="stat"><b id="sNews">–</b><span>From recognised news outlets</span></div>
+    <div class="stat"><b id="sOther">–</b><span>From other sources</span></div>
+    <div class="stat"><b id="sLatest" class="small">–</b><span>Most recent item</span></div>
+  </section>
+
+  <div class="filters">
+    <div><label for="q">Search</label><input id="q" type="search" placeholder="Headline, source, excerpt…"></div>
+    <div><label for="source">Source type</label><select id="source"><option value="">All sources</option><option>News</option><option>Other</option></select></div>
+    <div><label for="sort">Sort</label><select id="sort"><option value="new">Newest first</option><option value="old">Oldest first</option></select></div>
+  </div>
+
+  <div class="results-head"><p id="resultCount"></p></div>
+  <div class="list" id="list"></div>
+  <button class="more" id="more" hidden>Show more</button>
+</main>
+
+<footer>
+  <div class="wrap">
+    Items in this queue are collected automatically and have not been checked. They are not published records and should not be relied on. Always read the original source.
+  </div>
+</footer>
+
+<script>
+(function(){
+const PAGE=20;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl=u=>/^https?:\/\//i.test(u||"")?u:"";
+const cats=r=>(r.finding_categories||"").split(";").map(s=>s.trim()).filter(Boolean);
+const fmtDate=d=>{if(!d)return"";const t=new Date(d+"T00:00:00");return isNaN(t)?d:t.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"})};
+const host=u=>{try{return new URL(u).hostname.replace(/^www\./,"")}catch(e){return""}};
+
+let data=[],state={q:"",src:"",sort:"new"},shown=PAGE;
+
+// theme toggle (shares the preference with the records page)
+const root=document.documentElement;
+try{const t=localStorage.getItem("fst-theme");if(t)root.dataset.theme=t}catch(e){}
+$("themeBtn").onclick=()=>{
+  const dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme=dark?"light":"dark";
+  try{localStorage.setItem("fst-theme",root.dataset.theme)}catch(e){}
+};
+
+function filtered(){
+  const q=state.q.toLowerCase();
+  const out=data.filter(r=>(!q||JSON.stringify(r).toLowerCase().includes(q))&&(!state.src||(r.source_type||"Other")===state.src));
+  out.sort((a,b)=>(a.date_reported||"").localeCompare(b.date_reported||"")*(state.sort==="new"?-1:1));
+  return out;
+}
+
+function card(r){
+  const url=safeUrl(r.source_url);
+  const news=r.source_type==="News";
+  const facts=[["Keywords suggest",r.action_taken],["Status","Awaiting review — not verified"]].filter(f=>f[1]);
+  return `<article class="rec">
+    <div class="rec-top">
+      <div><h4>${esc(r.restaurant_name||r.finding||"Untitled item")}</h4><div class="meta">${esc(r.source_name||host(url)||"Unknown source")}</div></div>
+      <div class="date">${esc(fmtDate(r.date_reported))}</div>
+    </div>
+    <div class="tags" style="margin-top:10px"><span class="badge ${news?"news":"other"}">${news?"News report":"Other source"}</span>${cats(r).map(c=>`<span class="tag auto" title="Matched automatically from keywords">${esc(c)}</span>`).join("")}</div>
+    <dl class="facts">${facts.map(f=>`<div><dt>${f[0]}</dt><dd>${esc(f[1])}</dd></div>`).join("")}</dl>
+    <details><summary>Excerpt &amp; source</summary>
+      ${r.evidence_excerpt?`<blockquote>${esc(r.evidence_excerpt)}</blockquote>`:""}
+      <p style="margin:8px 0 0">${url?`<a href="${esc(url)}" target="_blank" rel="noopener">Open source ↗</a>`:"No source link"}${r.last_updated?` · Queued ${esc(fmtDate(r.last_updated))}`:""}${r.incident_id?` · <span style="color:var(--muted)">${esc(r.incident_id)}</span>`:""}</p>
+    </details>
+  </article>`;
+}
+
+function render(){
+  const rows=filtered();
+  $("resultCount").textContent=data.length?`Showing ${Math.min(shown,rows.length)} of ${rows.length} item${rows.length===1?"":"s"}`:"";
+  if(!data.length) $("list").innerHTML=`<div class="empty"><h4>The review queue is empty</h4>New items appear here after the daily update when they can't be published automatically.</div>`;
+  else if(!rows.length) $("list").innerHTML=`<div class="empty"><h4>No items match these filters</h4>Try clearing the search or source filter.</div>`;
+  else $("list").innerHTML=rows.slice(0,shown).map(card).join("");
+  $("more").hidden=rows.length<=shown;
+}
+
+function init(d){
+  data=Array.isArray(d)?d:[];
+  $("sCount").textContent=data.length;
+  $("sNews").textContent=data.filter(x=>x.source_type==="News").length;
+  $("sOther").textContent=data.filter(x=>x.source_type!=="News").length;
+  const latest=data.map(x=>x.date_reported).filter(Boolean).sort().pop();
+  $("sLatest").textContent=latest?fmtDate(latest):"–";
+  const last=data.map(x=>x.last_updated).filter(Boolean).sort().pop();
+  $("updated").textContent=last?`Queue last changed ${fmtDate(last)} · refreshed daily at 08:00 IST`:"Refreshed daily at 08:00 IST";
+  render();
+}
+
+$("q").oninput=e=>{state.q=e.target.value;shown=PAGE;render()};
+$("source").onchange=e=>{state.src=e.target.value;shown=PAGE;render()};
+$("sort").onchange=e=>{state.sort=e.target.value;render()};
+$("more").onclick=()=>{shown+=PAGE;render()};
+
+fetch("review_queue.json",{cache:"no-store"})
+  .then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+  .then(init)
+  .catch(()=>{init([]);$("list").innerHTML=`<div class="empty"><h4>Couldn't load the review queue</h4>The queue file could not be read. Please try again later.</div>`});
+})();
+</script>
+</body>
+</html>

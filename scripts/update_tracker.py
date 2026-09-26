@@ -10,6 +10,7 @@ PUBLIC = ROOT / "public"
 CSV_PATH = DATA / "food_safety_incidents.csv"
 JSON_PATH = PUBLIC / "food_safety_incidents.json"
 REVIEW_PATH = DATA / "review_queue.csv"
+REVIEW_JSON_PATH = PUBLIC / "review_queue.json"
 
 QUERIES = [
     '"food safety" restaurant India FSSAI',
@@ -163,4 +164,7 @@ with open(REVIEW_PATH,"w",newline="",encoding="utf-8") as f:
     w=csv.DictWriter(f,fieldnames=FIELDS); w.writeheader(); w.writerows(review)
 PUBLIC.mkdir(exist_ok=True)
 JSON_PATH.write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding="utf-8")
+# Published separately so the review page can list queued items; they are not verified records.
+review.sort(key=lambda r:(r.get("date_reported",""),r.get("incident_id","")),reverse=True)
+REVIEW_JSON_PATH.write_text(json.dumps(review,ensure_ascii=False,indent=2),encoding="utf-8")
 print(f"Published {len(rows)} records; review queue {len(review)}.")
