@@ -966,6 +966,27 @@
     "last_updated": "2026-09-27"
   },
   {
+    "incident_id": "FS-5F8A523C2C",
+    "restaurant_name": "FSSAI issues notice to Delhi's Andaz, JW Marriott over expired sweets, cockroaches",
+    "location": "",
+    "city": "",
+    "state": "",
+    "date_reported": "2026-08-26",
+    "date_inspection": "",
+    "authority": "",
+    "finding": "FSSAI issues notice to Delhi's Andaz, JW Marriott over expired sweets, cockroaches - India Today",
+    "finding_categories": "Pest infestation; Expired food; Spoiled / stale food; Microbial / fungal contamination; Labelling / date-marking; Temperature control; Cross-contamination / segregation; Water / ice safety; Poor hygiene / sanitation; Waste / drainage; Equipment / premises; Licensing / registration; Storage / packaging",
+    "action_taken": "seized; inspection; raid",
+    "samples_collected": "",
+    "closure_status": "",
+    "verification_status": "News report — corroboration recommended",
+    "source_name": "India Today",
+    "source_type": "Other",
+    "source_url": "https://www.indiatoday.in/health/story/fssai-notice-andaz-jw-marriott-delhi-food-safety-lapses-2980517-2026-08-26",
+    "evidence_excerpt": "FSSAI issues notice to Delhi’s Andaz, JW Marriott over expired sweets, cockroaches - India Today India Today Aaj Tak India Today Hindi NewsTak GNTTV Lallantop Business Today Bangla Malayalam Northeast BT Bazaar Harper's Bazaar Sports Tak Astro Tak Gaming Brides Today Cosmopolitan Kisan Tak Reader’s Digest India Today Aaj Tak India Today Hindi NewsTak GNTTV Lallantop Business Today Bangla Malayalam Northeast Magazine Live TV Search SEARCH SIGN IN Edition IN IN US Home TV Live TV Primetime Magazine Latest Edition Insight Best Colleges India Today Hindi Jobs India Business All Business News Share Market IPO Personal Finance Companies Life+Style Puzzles South Global Sports Asian Games Medal Tall",
+    "last_updated": "2026-09-30"
+  },
+  {
     "incident_id": "FS-2A2AB0F0C9",
     "restaurant_name": "Expired meat, filthy kitchens: FSSAI raids expose rot at 10 Bengaluru elite clubs",
     "location": "",
