@@ -245,10 +245,13 @@ const fmtDate=d=>{if(!d)return"";const t=new Date(d+"T00:00:00");return isNaN(t)
 
 let data=[],state={q:"",st:"",src:"",type:"",cat:"",sort:"new"},shown=PAGE,groups=new Map();
 
-// Records for the same establishment: same normalised name in the same city (branches of a chain stay separate).
+// Records for the same establishment: same normalised name in the same city (branches in other cities stay separate).
+// Bracketed operator names and generic words are ignored, so "Shah Ghouse Hotel" matches "Shah Ghouse Restaurant".
 // Unnamed establishments are never grouped, since they may be different premises.
 const norm=s=>String(s||"").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g,"");
-const estKey=r=>/name not published|unnamed/i.test(r.restaurant_name||"")||!norm(r.restaurant_name)?"id:"+r.incident_id:norm(r.restaurant_name)+"|"+norm(r.city||r.state);
+const GENERIC=/\b(the|and|hotel|restaurant|restaurants|cafe|bar)\b|&/g;
+const nameKey=s=>{const t=String(s||"").replace(/\(.*?\)/g," ").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g,"");return norm(t.replace(GENERIC," "))||norm(s)};
+const estKey=r=>/name not published|unnamed/i.test(r.restaurant_name||"")||!norm(r.restaurant_name)?"id:"+r.incident_id:nameKey(r.restaurant_name)+"|"+norm(r.city||r.state);
 function buildGroups(){
   groups=new Map();
   data.forEach(r=>{const k=estKey(r);if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r)});
