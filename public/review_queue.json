@@ -399,6 +399,27 @@
     "last_updated": "2026-09-25"
   },
   {
+    "incident_id": "FS-F8A4C87FA5",
+    "restaurant_name": "Maharashtra FDA suspends food licenses of railway catering supplier, 20 eateries over alleged violations of safety norms",
+    "location": "",
+    "city": "",
+    "state": "",
+    "date_reported": "2026-09-09",
+    "date_inspection": "",
+    "authority": "",
+    "finding": "Maharashtra FDA suspends food licenses of railway catering supplier, 20 eateries over alleged violations of safety norms - indiagazette.com",
+    "finding_categories": "Pest infestation; Expired food; Adulteration; Labelling / date-marking; Temperature control; Water / ice safety; Poor hygiene / sanitation; Waste / drainage; Equipment / premises; Food-handler hygiene; Licensing / registration",
+    "action_taken": "license suspended; closed; inspection",
+    "samples_collected": "",
+    "closure_status": "",
+    "verification_status": "News report — corroboration recommended",
+    "source_name": "indiagazette.com",
+    "source_type": "Other",
+    "source_url": "https://www.indiagazette.com/news/279295921/maharashtra-fda-suspends-food-licenses-of-railway-catering-supplier-20-eateries-over-alleged-violations-of-safety-norms",
+    "evidence_excerpt": "Maharashtra FDA suspends food licenses of railway catering supplier, 20 eateries over alleged violations of safety norms Menu Home Business International Delhi Wire Search Weather Network VOLUME NO. 0205/16 Maharashtra FDA suspends food licenses of railway catering supplier, 20 eateries over alleged violations of safety norms ANI 09 Sep 2026, 15:28 GMT+10 Mumbai (Maharashtra) [India], September 9 (ANI): The Maharashtra Food and Drug Administration (FDA) on Wednesday suspended the licenses of a supplier linked to a railway caterer, a dairy unit and multiple eateries at a rekigious centre in Juhu for alleged violations of food safety norms. According to the Maharashtra FDA, 'Inspection of food",
+    "last_updated": "2026-10-01"
+  },
+  {
     "incident_id": "FS-D3313214F0",
     "restaurant_name": "40 restaurants, sweet shops shut in Kolkata over safety norms",
     "location": "",
