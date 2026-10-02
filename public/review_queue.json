@@ -1827,6 +1827,27 @@
     "last_updated": "2026-09-25"
   },
   {
+    "incident_id": "FS-3174022435",
+    "restaurant_name": "Food Safety officials raid hotels, eateries, destroy adulterated items",
+    "location": "",
+    "city": "",
+    "state": "",
+    "date_reported": "2025-11-25",
+    "date_inspection": "",
+    "authority": "",
+    "finding": "Food Safety officials raid hotels, eateries, destroy adulterated items - The Hindu",
+    "finding_categories": "Pest infestation; Spoiled / stale food; Adulteration; Water / ice safety",
+    "action_taken": "destroyed; inspection; raided; raid",
+    "samples_collected": "",
+    "closure_status": "",
+    "verification_status": "News report — corroboration recommended",
+    "source_name": "The Hindu",
+    "source_type": "News",
+    "source_url": "https://www.thehindu.com/news/national/andhra-pradesh/food-safety-officials-raid-hotels-eateries-destroy-adulterated-items/article70323279.ece",
+    "evidence_excerpt": "Food Safety officials raid hotels, eateries, destroy adulterated items - The Hindu You are logged in Loading... LOGOUT You don’t have any Active Subscription. Subscribe now Subscribed with another email? Logout and Login with that one. Your active subscription(s) Account subscription benefits alongside Premium Stories, Editorials, Opinions and more. Unlock these with Subscription Products you've access to Additional Subscription Benefits eBooks Webinars Newsletters Games Monthly Digest Account Settings Go to My Account Bookmarks Manage Subscriptions Need help with your subscription? customersupport@thehindu.co.in 1800 102 1878 Weather News October 1, 2026 e-Paper LOGIN Account eBooks Subscri",
+    "last_updated": "2026-10-02"
+  },
+  {
     "incident_id": "FS-17EE015E0E",
     "restaurant_name": "50% of food samples collected by Food Safety department officials found to be unsafe",
     "location": "",
