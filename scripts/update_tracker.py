@@ -3,6 +3,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 import feedparser, requests
 from bs4 import BeautifulSoup
+# Imported at top level so a broken install fails the run loudly instead of silently
+# skipping every Google News link (selectolax 1.0 broke googlenewsdecoder this way).
+from googlenewsdecoder import gnewsdecoder
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -76,7 +79,6 @@ def resolve_google_news(url):
     """Google News RSS links no longer redirect over plain HTTP; decode them to the publisher URL."""
     if "news.google.com" not in url: return url
     try:
-        from googlenewsdecoder import gnewsdecoder
         res=gnewsdecoder(url, interval=1)
         if res.get("status") or res.get("success"):
             return res.get("decoded_url") or url
@@ -117,7 +119,9 @@ existing_urls={r.get("source_url","") for r in rows+review}
 
 for q in QUERIES:
     feed=feedparser.parse("https://news.google.com/rss/search?q="+requests.utils.quote(q)+"&hl=en-IN&gl=IN&ceid=IN:en")
-    for e in feed.entries[:15]:
+    # The feed is in relevance order; take the newest items so fresh reports are not crowded out.
+    entries=sorted(feed.entries,key=lambda e:tuple(e.get("published_parsed") or ()),reverse=True)
+    for e in entries[:15]:
         url=e.get("link","")
         title=clean(e.get("title",""))
         pub=e.get("published","")

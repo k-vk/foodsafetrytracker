@@ -3,3 +3,4 @@ requests
 beautifulsoup4
 python-dateutil
 googlenewsdecoder
+selectolax<1.0  # googlenewsdecoder 0.2.1 imports the backend removed in selectolax 1.0
