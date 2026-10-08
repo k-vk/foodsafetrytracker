@@ -106,6 +106,17 @@ jobs:
           name: github-pages
           retention-days: 1
 
+  # Deploy in its own job, as GitHub recommends: it starts only after the upload job has
+  # finished, so the artifact is registered before deploy-pages looks it up. Deploying in the
+  # same job failed on 8 Oct with "No artifacts named github-pages" one second after upload.
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
