@@ -78,6 +78,7 @@ table.records{width:100%;min-width:900px;border-collapse:collapse;font-size:13.5
 .pill{display:inline-block;margin-top:4px;font-size:11.5px;padding:1px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted);font-weight:550;text-decoration:none}
 .pill.repeat{background:var(--warn-soft);color:var(--warn)}
 .pill.pos{background:var(--pos-soft);color:var(--pos)}
+.pill.auto{background:var(--info-soft);color:var(--info);cursor:help}
 abbr[title]{text-decoration:underline dotted;text-underline-offset:2px;cursor:help}
 
 .empty{text-align:center;padding:48px 20px;background:var(--surface);border:1px dashed var(--line);border-radius:12px;color:var(--muted)}
@@ -233,6 +234,7 @@ footer .wrap{max-width:1480px}
           <li>Records are updated daily at 08:00 IST.</li>
           <li>Official-source records are published directly.</li>
           <li>News-based records are published only when they show an explicit regulatory action and a specific finding; they are marked "corroboration recommended".</li>
+          <li>New news articles are read by an AI model that lists each named establishment and what the article reports about it. A record is published only if the establishment's name appears in the article and a city and state are given; quotes are kept only when they match the article word for word. These rows are tagged "Auto-extracted" until a person reviews them.</li>
           <li>Uncertain items are held in a <a href="review.html">review queue</a> and are not shown here.</li>
           <li>Where a source gives no inspection date, the table shows the date the source reported the action.</li>
         </ul>
@@ -283,6 +285,7 @@ const place=r=>[r.location&&r.location!==r.city?r.location:"",r.city,r.state].fi
 // → FDA, Maharashtra, with the full name on hover
 const authority=a=>{const m=/^(.+?)\s*\(([A-Z][A-Z0-9 .&-]{1,14})\)(.*)$/.exec(a||"");return m?`<abbr title="${esc(a)}">${esc(m[2])}</abbr>${esc(m[3])}`:esc(a)};
 const sourceLink=r=>{const u=safeUrl(r.source_url),n=esc(r.source_name||"Source");return u?`<a href="${esc(u)}" target="_blank" rel="noopener">${n} ↗</a>`:n};
+const isAuto=r=>/^auto-extracted/i.test(r.verification_status||"");
 const typeLabel=t=>t==="Official"?"Official source":t==="News"?"News report":"Other source";
 
 let data=[],state={q:"",st:"",src:"",type:"",cat:"",sort:"new"},shown=PAGE,groups=new Map(),byId=new Map();
@@ -344,7 +347,7 @@ function row(r,i){
     ${td("Action taken",esc(r.action_taken)||NR)}
     ${td("Authority",authority(r.authority)||NR)}
     ${td("Follow-up status",esc(r.closure_status)||NR)}
-    ${td("Source",`${sourceLink(r)}<span class="sub">${esc(typeLabel(r.source_type))}</span>`,"src")}
+    ${td("Source",`${sourceLink(r)}<span class="sub">${esc(typeLabel(r.source_type))}</span>${isAuto(r)?'<span class="pill auto" title="Extracted automatically from the article by AI and not yet reviewed by a person. Check the source.">Auto-extracted</span>':""}`,"src")}
   </tr>`;
 }
 
