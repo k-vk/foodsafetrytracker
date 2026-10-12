@@ -23,21 +23,22 @@
 body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+main.wrap{max-width:1480px}
 header.top{border-bottom:1px solid var(--line);background:var(--surface)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px;max-width:1480px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:650;letter-spacing:-.01em}
 .brand svg{flex:none}
 nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
 nav a:hover{color:var(--text)}
-.hero{padding:40px 0 24px}
-.hero h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em;max-width:22ch}
-.hero p{color:var(--muted);max-width:70ch;margin:0}
+.hero{padding:36px 0 20px}
+.hero h1{font-size:clamp(26px,4vw,36px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em;max-width:24ch}
+.hero p{color:var(--muted);max-width:75ch;margin:0}
 .updated{margin-top:14px;font-size:13px;color:var(--muted)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 28px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
-.stat b{display:block;font-size:28px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 24px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:26px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .stat span{color:var(--muted);font-size:13px}
-.layout{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;align-items:start}
 aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
 .panel h3{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
@@ -54,52 +55,64 @@ input:focus,select:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .cat .bar i{display:block;height:100%;background:var(--accent)}
 .cat.active{color:var(--accent);font-weight:600}
 .cat small{color:var(--muted);font-variant-numeric:tabular-nums}
-.results-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px;flex-wrap:wrap}
+.results-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px;flex-wrap:wrap}
 .results-head p{margin:0;color:var(--muted);font-size:14px}
-.list{display:flex;flex-direction:column;gap:12px}
-.rec{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
-.rec-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-.rec h4{margin:0;font-size:16px;line-height:1.35}
-.meta{color:var(--muted);font-size:13px;margin-top:2px}
-.date{font-size:13px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
-.finding{margin:10px 0 8px}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:12px;padding:2px 9px;border-radius:999px;background:var(--surface-2);color:var(--text)}
-.tag.pos{background:var(--pos-soft);color:var(--pos)}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px 16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:13px}
-.facts dt{color:var(--muted)}
-.facts dd{margin:0}
-.badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:2px 9px;border-radius:999px;font-weight:550}
-.badge.official{background:var(--accent-soft);color:var(--accent)}
-.badge.news{background:var(--warn-soft);color:var(--warn)}
-.badge.other{background:var(--info-soft);color:var(--info)}
-details{margin-top:10px;font-size:13px}
-summary{cursor:pointer;color:var(--accent)}
-blockquote{margin:8px 0 0;padding:10px 12px;border-left:3px solid var(--line);background:var(--surface-2);border-radius:0 8px 8px 0;color:var(--muted)}
+
+/* records table */
+.table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow-x:auto}
+table.records{width:100%;min-width:900px;border-collapse:collapse;font-size:13.5px;line-height:1.45}
+.records th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;padding:10px 10px;background:var(--surface-2);border-bottom:1px solid var(--line);vertical-align:bottom}
+.records td{padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.records tbody tr:last-child td{border-bottom:0}
+.records tbody tr:hover td{background:var(--surface-2)}
+.records th:first-child{white-space:nowrap}
+.records td.sno{color:var(--muted);font-variant-numeric:tabular-nums;width:44px}
+.records td.name{min-width:125px}
+.records td.name a{font-weight:600}
+.records td.name a.pill{display:table;font-weight:550}
+.records td.when{white-space:nowrap;font-variant-numeric:tabular-nums}
+.records td.finding{min-width:200px;width:28%}
+.records td.src{min-width:100px}
+.records a{text-decoration-thickness:1px;text-underline-offset:2px}
+.sub{display:block;color:var(--muted);font-size:12px}
+.pill{display:inline-block;margin-top:4px;font-size:11.5px;padding:1px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted);font-weight:550;text-decoration:none}
+.pill.repeat{background:var(--warn-soft);color:var(--warn)}
+.pill.pos{background:var(--pos-soft);color:var(--pos)}
+abbr[title]{text-decoration:underline dotted;text-underline-offset:2px;cursor:help}
+
 .empty{text-align:center;padding:48px 20px;background:var(--surface);border:1px dashed var(--line);border-radius:12px;color:var(--muted)}
 .empty h4{color:var(--text);margin:0 0 6px}
 .more{display:block;margin:16px auto 0;padding:9px 18px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;cursor:pointer;font:inherit}
 .demo-banner{background:var(--warn-soft);color:var(--warn);padding:10px 16px;text-align:center;font-size:14px}
-section.about{padding:48px 0 24px}
+
+/* detail panel (restaurant / date) */
+dialog#detail{width:min(760px,calc(100% - 24px));max-height:min(86vh,900px);padding:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);box-shadow:0 12px 40px rgba(0,0,0,.25)}
+dialog#detail::backdrop{background:rgba(0,0,0,.45)}
+.d-head{position:sticky;top:0;z-index:1;display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:16px 18px 12px;background:var(--surface);border-bottom:1px solid var(--line)}
+.d-head h2{margin:0;font-size:19px;line-height:1.3;letter-spacing:-.01em}
+.d-head p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.d-body{padding:4px 18px 18px}
+.d-item{padding:14px 0;border-bottom:1px solid var(--line)}
+.d-item:last-child{border-bottom:0}
+.d-item h3{margin:0 0 4px;font-size:15px}
+.d-meta{color:var(--muted);font-size:13px}
+.d-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px 16px;margin:10px 0 0;font-size:13px}
+.d-facts dt{color:var(--muted)}
+.d-facts dd{margin:0}
+.d-body h4{margin:18px 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.d-sources{margin:0;padding-left:18px;font-size:13.5px}
+.d-sources li{margin:4px 0}
+blockquote{margin:10px 0 0;padding:9px 12px;border-left:3px solid var(--line);background:var(--surface-2);border-radius:0 8px 8px 0;color:var(--muted);font-size:13px}
+
+section.about{padding:44px 0 24px}
 section.about h2{font-size:22px;margin:0 0 16px;letter-spacing:-.01em}
 .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .cols .panel h3{color:var(--text);text-transform:none;letter-spacing:0;font-size:15px}
 .cols ol,.cols ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
 .cols li{margin:4px 0}
 footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);font-size:13px}
+footer .wrap{max-width:1480px}
 .theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;padding:6px 9px;cursor:pointer;margin-left:14px}
-.hist{margin-top:12px}
-.hist-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:999px;padding:3px 11px 3px 8px;font:inherit;font-size:12px;cursor:pointer}
-.hist-btn b{font-variant-numeric:tabular-nums}
-.hist-btn.repeat{background:var(--warn-soft);border-color:transparent;color:var(--warn)}
-.hist-btn svg{flex:none;transition:transform .15s}
-.hist-btn[aria-expanded="true"] svg{transform:rotate(90deg)}
-.hist-list{list-style:none;margin:8px 0 0;padding:0;border:1px solid var(--line);border-radius:10px;font-size:13px}
-.hist-list li{padding:8px 12px;border-top:1px solid var(--line)}
-.hist-list li:first-child{border-top:0}
-.hist-list li.current{background:var(--surface-2)}
-.hist-list .hd{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-variant-numeric:tabular-nums}
-.hist-list .tag{font-size:11px;padding:1px 7px}
 .menu-btn,.drawer-head,.drawer-nav,.drawer-foot,.scrim{display:none}
 .menu-btn{position:relative;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;padding:6px 9px;cursor:pointer;margin-left:8px}
 .menu-btn .dot{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--accent);color:var(--surface);font-size:11px;line-height:18px;font-weight:650}
@@ -115,6 +128,18 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);f
   .drawer-nav a{padding:10px 4px;text-decoration:none;color:var(--text);border-bottom:1px solid var(--line)}
   .drawer-foot{display:block;position:sticky;bottom:-16px;margin:0 -16px -16px;padding:12px 16px;background:var(--bg);border-top:1px solid var(--line)}
   .drawer-foot button{width:100%;padding:11px;border:0;border-radius:8px;background:var(--accent);color:var(--surface);font:inherit;font-weight:600;cursor:pointer}
+}
+/* phone: each table row becomes a labelled card */
+@media (max-width:700px){
+  .table-wrap{background:none;border:0;box-shadow:none;overflow:visible}
+  table.records{min-width:0}
+  .records thead{display:none}
+  .records,.records tbody,.records tr,.records td{display:block;width:auto}
+  .records tr{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:6px 0;box-shadow:var(--shadow)}
+  .records td{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;border:0;padding:6px 14px;min-width:0!important;width:auto!important}
+  .records td::before{content:attr(data-label);color:var(--muted);font-size:12px;padding-top:1px}
+  .records tbody tr:hover td{background:none}
+  .records td.when{white-space:normal}
 }
 @media (prefers-reduced-motion:reduce){aside{transition:none!important}}
 </style>
@@ -138,7 +163,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);f
 <main class="wrap">
   <section class="hero">
     <h1>A source-based record of food-safety actions in India</h1>
-    <p>Inspections, findings, regulatory actions and follow-up status, as documented by cited sources. This site records what sources say; it does not independently declare any establishment unsafe, and it does not score or rank establishments.</p>
+    <p>Inspections, findings, regulatory actions and follow-up status, as documented by cited sources. This site records what sources say; it does not independently declare any establishment unsafe, and it does not score or rank establishments. Select a restaurant to see all its records and sources, or a date to see every establishment acted on that day.</p>
     <div class="updated" id="updated"></div>
   </section>
 
@@ -183,7 +208,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);f
 
     <div>
       <div class="results-head"><p id="resultCount"></p></div>
-      <div class="list" id="list"></div>
+      <div id="list"></div>
       <button class="more" id="more" hidden>Show more</button>
     </div>
   </div>
@@ -209,6 +234,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);f
           <li>Official-source records are published directly.</li>
           <li>News-based records are published only when they show an explicit regulatory action and a specific finding; they are marked "corroboration recommended".</li>
           <li>Uncertain items are held in a <a href="review.html">review queue</a> and are not shown here.</li>
+          <li>Where a source gives no inspection date, the table shows the date the source reported the action.</li>
         </ul>
       </div>
       <div class="panel">
@@ -224,6 +250,14 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);f
   </section>
 </main>
 
+<dialog id="detail" aria-labelledby="dTitle">
+  <div class="d-head">
+    <div><h2 id="dTitle"></h2><p id="dSub"></p></div>
+    <button class="icon-btn" id="dClose" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="display:block"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="d-body" id="dBody"></div>
+</dialog>
+
 <footer>
   <div class="wrap">
     Extraction is rule-based and may contain errors. Always check the cited source before relying on a record. Establishments can request a correction or add a follow-up outcome by contacting the maintainers of this repository.
@@ -235,15 +269,23 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);f
 const ENFORCEMENT=["Pest infestation","Expired food","Spoiled / stale food","Microbial / fungal contamination","Adulteration","Chemical contamination","Foreign matter","Unsafe additives / colours","Labelling / date-marking","Temperature control","Cross-contamination / segregation","Water / ice safety","Poor hygiene / sanitation","Waste / drainage","Equipment / premises","Food-handler hygiene","Medical / training records","Licensing / registration","Storage / packaging"];
 const POSITIVE=["Inspection passed","Compliant inspection","Corrective action completed","Licence restored / suspension revoked"];
 const POS_TERMS=["passed","compliant","corrective action completed","licence restored","license restored","suspension revoked","rectified","compliance achieved"];
-const PAGE=20;
+const PAGE=50;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl=u=>/^https?:\/\//i.test(u||"")?u:"";
 const cats=r=>(r.finding_categories||"").split(";").map(s=>s.trim()).filter(Boolean);
 const isPositive=r=>{const x=(r.finding_categories+" "+r.finding+" "+r.action_taken).toLowerCase();return POS_TERMS.some(t=>x.includes(t))};
 const fmtDate=d=>{if(!d)return"";const t=new Date(d+"T00:00:00");return isNaN(t)?d:t.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"})};
+// The date shown and linked: the inspection date, or the date the source reported the action when no inspection date is given.
+const eventDate=r=>r.date_inspection||r.date_reported||"";
+const place=r=>[r.location&&r.location!==r.city?r.location:"",r.city,r.state].filter(Boolean).join(", ");
+// "Telangana Standards Authority … (TG SAFE)" → TG SAFE, and "Food and Drug Administration (FDA), Maharashtra"
+// → FDA, Maharashtra, with the full name on hover
+const authority=a=>{const m=/^(.+?)\s*\(([A-Z][A-Z0-9 .&-]{1,14})\)(.*)$/.exec(a||"");return m?`<abbr title="${esc(a)}">${esc(m[2])}</abbr>${esc(m[3])}`:esc(a)};
+const sourceLink=r=>{const u=safeUrl(r.source_url),n=esc(r.source_name||"Source");return u?`<a href="${esc(u)}" target="_blank" rel="noopener">${n} ↗</a>`:n};
+const typeLabel=t=>t==="Official"?"Official source":t==="News"?"News report":"Other source";
 
-let data=[],state={q:"",st:"",src:"",type:"",cat:"",sort:"new"},shown=PAGE,groups=new Map();
+let data=[],state={q:"",st:"",src:"",type:"",cat:"",sort:"new"},shown=PAGE,groups=new Map(),byId=new Map();
 
 // Records for the same establishment: same normalised name in the same city (branches in other cities stay separate).
 // Bracketed operator names and generic words are ignored, so "Shah Ghouse Hotel" matches "Shah Ghouse Restaurant".
@@ -253,9 +295,9 @@ const GENERIC=/\b(the|and|hotel|restaurant|restaurants|cafe|bar)\b|&/g;
 const nameKey=s=>{const t=String(s||"").replace(/\(.*?\)/g," ").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g,"");return norm(t.replace(GENERIC," "))||norm(s)};
 const estKey=r=>/name not published|unnamed/i.test(r.restaurant_name||"")||!norm(r.restaurant_name)?"id:"+r.incident_id:nameKey(r.restaurant_name)+"|"+norm(r.city||r.state);
 function buildGroups(){
-  groups=new Map();
-  data.forEach(r=>{const k=estKey(r);if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r)});
-  groups.forEach(g=>g.sort((a,b)=>(b.date_reported||"").localeCompare(a.date_reported||"")));
+  groups=new Map();byId=new Map();
+  data.forEach(r=>{byId.set(r.incident_id,r);const k=estKey(r);if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r)});
+  groups.forEach(g=>g.sort((a,b)=>eventDate(b).localeCompare(eventDate(a))));
 }
 
 // theme toggle (per-viewer preference)
@@ -269,59 +311,41 @@ $("themeBtn").onclick=()=>{
 
 function filtered(){
   const q=state.q.toLowerCase();
-  let out=data.filter(r=>
+  const out=data.filter(r=>
     (!q||JSON.stringify(r).toLowerCase().includes(q))&&
     (!state.st||r.state===state.st)&&
     (!state.src||r.source_type===state.src)&&
     (!state.type||(state.type==="positive"?isPositive(r):!isPositive(r)))&&
     (!state.cat||cats(r).includes(state.cat)));
-  out.sort((a,b)=>(a.date_reported||"").localeCompare(b.date_reported||"")*(state.sort==="new"?-1:1));
+  const dir=state.sort==="new"?-1:1;
+  out.sort((a,b)=>(eventDate(a).localeCompare(eventDate(b))||String(a.incident_id).localeCompare(String(b.incident_id)))*dir);
   return out;
 }
 
-function badge(r){
-  const t=r.source_type||"Other",cls=t==="Official"?"official":t==="News"?"news":"other";
-  return `<span class="badge ${cls}">${esc(t==="Official"?"Official source":t==="News"?"News report":"Other source")}</span>`;
-}
-
-function card(r){
-  const loc=[r.location!==r.city?r.location:"",r.city,r.state].filter(Boolean).join(", ");
-  const url=safeUrl(r.source_url);
-  const facts=[["Authority",r.authority],["Action taken",r.action_taken],["Inspection date",fmtDate(r.date_inspection)],["Samples",r.samples_collected],["Follow-up status",r.closure_status],["Verification",r.verification_status]].filter(f=>f[1]);
-  return `<article class="rec">
-    <div class="rec-top">
-      <div><h4>${esc(r.restaurant_name||"Unnamed establishment")}</h4>${loc?`<div class="meta">${esc(loc)}</div>`:""}</div>
-      <div class="date">${esc(fmtDate(r.date_reported))}</div>
-    </div>
-    <p class="finding">${esc(r.finding)}</p>
-    <div class="tags">${badge(r)}${cats(r).map(c=>`<span class="tag${POSITIVE.includes(c)?" pos":""}">${esc(c)}</span>`).join("")}</div>
-    ${facts.length?`<dl class="facts">${facts.map(f=>`<div><dt>${f[0]}</dt><dd>${esc(f[1])}</dd></div>`).join("")}</dl>`:""}
-    ${history(r)}
-    <details><summary>Evidence &amp; source</summary>
-      ${r.evidence_excerpt?`<blockquote>${esc(r.evidence_excerpt)}</blockquote>`:""}
-      <p style="margin:8px 0 0">${esc(r.source_name||"Source")}${url?` · <a href="${esc(url)}" target="_blank" rel="noopener">Open source ↗</a>`:""}${r.last_updated?` · Record updated ${esc(fmtDate(r.last_updated))}`:""}${r.incident_id?` · <span style="color:var(--muted)">${esc(r.incident_id)}</span>`:""}</p>
-    </details>
-  </article>`;
-}
-
-// How many records with findings this establishment has, with every record and its source.
-function history(r){
+// Records-with-findings count for the establishment, shown under its name when it has more than one record.
+function repeatPill(r){
   const g=groups.get(estKey(r))||[r];
+  if(g.length<2)return"";
   const n=g.filter(x=>!isPositive(x)).length;
-  const label=n?`<b>${n}</b> record${n===1?"":"s"} with findings`:`<b>${g.length}</b> compliance record${g.length===1?"":"s"}`;
-  const srcCount=new Set(g.map(x=>x.source_url||x.incident_id)).size;
-  const listId="h-"+esc(r.incident_id);
-  const items=g.map(x=>{
-    const url=safeUrl(x.source_url);
-    return `<li${x===r?' class="current"':""}>
-      <div class="hd"><span>${esc(fmtDate(x.date_reported))}${x===r?" · this record":""}</span>${isPositive(x)?'<span class="tag pos">Compliance</span>':""}</div>
-      <div>${esc(x.finding)}</div>
-      <div class="meta">${esc(x.source_name||"Source")}${url?` · <a href="${esc(url)}" target="_blank" rel="noopener">Open source ↗</a>`:""}</div>
-    </li>`}).join("");
-  return `<div class="hist">
-    <button class="hist-btn${n>1?" repeat":""}" aria-expanded="false" aria-controls="${listId}" title="Records for this establishment in the tracker"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>${label} · ${srcCount} source${srcCount===1?"":"s"}</button>
-    <ul class="hist-list" id="${listId}" hidden>${items}</ul>
-  </div>`;
+  return `<a class="pill${n>1?" repeat":""}" href="#r=${encodeURIComponent(r.incident_id)}" title="All records for this establishment">${g.length} records${n?` · ${n} with findings`:""}</a>`;
+}
+
+// Each cell's content sits in one <div> so the phone layout (label | value grid) gets exactly two items.
+const td=(label,html,cls="")=>`<td${cls?` class="${cls}"`:""} data-label="${label}"><div>${html}</div></td>`;
+const NR='<span class="sub">Not reported</span>';
+function row(r,i){
+  const d=eventDate(r);
+  return `<tr>
+    ${td("S No",i+1,"sno")}
+    ${td("Restaurant",`<a href="#r=${encodeURIComponent(r.incident_id)}">${esc(r.restaurant_name||"Unnamed establishment")}</a>${repeatPill(r)}`,"name")}
+    ${td("Location",esc(place(r))||NR)}
+    ${td("Inspection date",d?`<a href="#d=${d}" title="Everything acted on this day">${esc(fmtDate(d))}</a>${r.date_inspection?"":'<span class="sub">reported date</span>'}`:NR,"when")}
+    ${td("Findings",esc(r.finding)+(isPositive(r)?' <span class="pill pos">Compliance</span>':""),"finding")}
+    ${td("Action taken",esc(r.action_taken)||NR)}
+    ${td("Authority",authority(r.authority)||NR)}
+    ${td("Follow-up status",esc(r.closure_status)||NR)}
+    ${td("Source",`${sourceLink(r)}<span class="sub">${esc(typeLabel(r.source_type))}</span>`,"src")}
+  </tr>`;
 }
 
 function renderCats(){
@@ -340,7 +364,9 @@ function render(){
   }else if(!rows.length){
     $("list").innerHTML=`<div class="empty"><h4>No records match these filters</h4>Try clearing a filter or searching for something broader.</div>`;
   }else{
-    $("list").innerHTML=rows.slice(0,shown).map(card).join("");
+    $("list").innerHTML=`<div class="table-wrap"><table class="records">
+      <thead><tr><th scope="col">S No</th><th scope="col">Restaurant name</th><th scope="col">Location</th><th scope="col">Inspection date</th><th scope="col">Findings</th><th scope="col">Action taken</th><th scope="col">Authority</th><th scope="col">Follow-up status</th><th scope="col">Source</th></tr></thead>
+      <tbody>${rows.slice(0,shown).map(row).join("")}</tbody></table></div>`;
   }
   $("more").hidden=rows.length<=shown;
   const active=[state.q,state.st,state.src,state.type,state.cat].filter(Boolean).length;
@@ -349,6 +375,62 @@ function render(){
   $("drawerDone").textContent=data.length?`Show ${rows.length} record${rows.length===1?"":"s"}`:"Close";
   renderCats();
 }
+
+// ---- detail panel: opened by #r=<record id> (restaurant) or #d=<YYYY-MM-DD> (date) ----
+const dlg=$("detail");
+function facts(list){list=list.filter(f=>f[1]);return list.length?`<dl class="d-facts">${list.map(f=>`<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join("")}</dl>`:""}
+function sourcesList(recs){
+  const m=new Map();
+  recs.forEach(r=>{const k=r.source_url||r.source_name||r.incident_id;if(!m.has(k))m.set(k,{r,n:0});m.get(k).n++});
+  return `<h4>Sources (${m.size})</h4><ul class="d-sources">${[...m.values()].map(({r,n})=>`<li>${sourceLink(r)} <span class="sub" style="display:inline">· ${esc(typeLabel(r.source_type))}${n>1?` · cited for ${n} records`:""}</span></li>`).join("")}</ul>`;
+}
+function showRestaurant(id){
+  const r=byId.get(id);if(!r)return false;
+  const g=groups.get(estKey(r))||[r];
+  const n=g.filter(x=>!isPositive(x)).length;
+  $("dTitle").textContent=r.restaurant_name||"Unnamed establishment";
+  $("dSub").textContent=[place(r),`${g.length} record${g.length===1?"":"s"}${n?`, ${n} with findings`:""}`].filter(Boolean).join(" · ");
+  $("dBody").innerHTML=g.map(x=>{const d=eventDate(x);return `<div class="d-item">
+      <h3>${d?`<a href="#d=${d}">${esc(fmtDate(d))}</a>`:"Date not reported"}${x.date_inspection?"":' <span class="sub" style="display:inline">(reported date)</span>'}${x.incident_id===id&&g.length>1?' <span class="pill">selected record</span>':""}</h3>
+      <div class="d-meta">${esc(place(x))}</div>
+      <p style="margin:8px 0 0">${esc(x.finding)}</p>
+      ${facts([["Action taken",esc(x.action_taken)],["Authority",esc(x.authority)],["Follow-up status",esc(x.closure_status)],["Samples",esc(x.samples_collected)],["Verification",esc(x.verification_status)],["Source",sourceLink(x)]])}
+      ${x.evidence_excerpt?`<blockquote>${esc(x.evidence_excerpt)}</blockquote>`:""}
+      <div class="sub" style="margin-top:8px">${esc(x.incident_id)}${x.last_updated?` · record updated ${esc(fmtDate(x.last_updated))}`:""}</div>
+    </div>`}).join("")+sourcesList(g);
+  return true;
+}
+function showDate(d){
+  const recs=data.filter(r=>eventDate(r)===d).sort((a,b)=>(a.city||"").localeCompare(b.city||"")||(a.restaurant_name||"").localeCompare(b.restaurant_name||""));
+  if(!recs.length)return false;
+  const places=[...new Set(recs.map(r=>r.city||r.state).filter(Boolean))];
+  $("dTitle").textContent=fmtDate(d);
+  $("dSub").textContent=`${recs.length} establishment${recs.length===1?"":"s"} acted on · ${places.join(", ")}`;
+  $("dBody").innerHTML=recs.map(r=>`<div class="d-item">
+      <h3><a href="#r=${encodeURIComponent(r.incident_id)}">${esc(r.restaurant_name||"Unnamed establishment")}</a></h3>
+      <div class="d-meta">${esc(place(r))}${r.date_inspection?"":" · date as reported by the source"}</div>
+      <p style="margin:6px 0 0">${esc(r.finding)}</p>
+      ${facts([["Action taken",esc(r.action_taken)],["Authority",authority(r.authority)],["Source",sourceLink(r)]])}
+    </div>`).join("")+sourcesList(recs);
+  return true;
+}
+function openFromHash(){
+  const m=/^#([rd])=(.+)$/.exec(location.hash);
+  if(!m){if(dlg.open)dlg.close();return}
+  const v=decodeURIComponent(m[2]);
+  if(!(m[1]==="r"?showRestaurant(v):showDate(v)))return;
+  dlg.querySelector(".d-body").scrollTop=0;dlg.scrollTop=0;
+  if(!dlg.open)dlg.showModal();
+  $("dClose").focus();
+}
+function clearHash(){if(/^#[rd]=/.test(location.hash))history.replaceState(null,"",location.pathname+location.search)}
+// Clear the hash on every way of closing, not only the dialog's "close" event, which is queued and not always delivered.
+function closeDetail(){dlg.close();clearHash()}
+dlg.addEventListener("close",clearHash);
+dlg.addEventListener("cancel",clearHash); // Escape
+$("dClose").onclick=closeDetail;
+dlg.addEventListener("click",e=>{if(e.target===dlg)closeDetail()});
+window.addEventListener("hashchange",openFromHash);
 
 function init(d){
   data=Array.isArray(d)?d:[];
@@ -362,6 +444,7 @@ function init(d){
   const last=data.map(x=>x.last_updated).filter(Boolean).sort().pop();
   $("updated").textContent=last?`Last updated ${fmtDate(last)} · refreshed daily at 08:00 IST`:"Refreshed daily at 08:00 IST";
   render();
+  openFromHash();
 }
 
 // controls
@@ -374,12 +457,6 @@ $("typeSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{
   state.type=b.dataset.v;shown=PAGE;render();
 });
 $("more").onclick=()=>{shown+=PAGE;render()};
-$("list").addEventListener("click",e=>{
-  const b=e.target.closest(".hist-btn");if(!b)return;
-  const open=b.getAttribute("aria-expanded")!=="true";
-  b.setAttribute("aria-expanded",open);
-  document.getElementById(b.getAttribute("aria-controls")).hidden=!open;
-});
 
 // phone: filters, categories and page links live in a slide-in drawer
 const mobile=matchMedia("(max-width:900px)");
@@ -402,10 +479,10 @@ $("reset").onclick=()=>{
 
 // Demo mode (?demo=1): fictional placeholder records for previewing the layout only.
 const DEMO=[
- {incident_id:"DEMO-001",restaurant_name:"Sample Eatery A (fictional)",city:"Hyderabad",state:"Telangana",date_reported:"2026-09-20",date_inspection:"2026-09-19",authority:"Food Safety Department",finding:"Placeholder: inspectors reported stored items past expiry and pest activity in the kitchen.",finding_categories:"Expired food; Pest infestation",action_taken:"notice issued; samples collected",samples_collected:"2",closure_status:"Awaiting follow-up",verification_status:"Official source",source_name:"Demo source",source_type:"Official",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-09-24"},
- {incident_id:"DEMO-002",restaurant_name:"Sample Kitchen B (fictional)",city:"Pune",state:"Maharashtra",date_reported:"2026-09-15",authority:"FSSAI",finding:"Placeholder: follow-up inspection found earlier issues rectified.",finding_categories:"Corrective action completed; Poor hygiene / sanitation",action_taken:"inspection",closure_status:"Closed — compliant",verification_status:"News report — corroboration recommended",source_name:"Demo source",source_type:"News",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-09-22"},
- {incident_id:"DEMO-003",restaurant_name:"Sample Café C (fictional)",city:"Kochi",state:"Kerala",date_reported:"2026-09-10",authority:"Commissionerate of Food Safety",finding:"Placeholder: licence suspended over missing registration; later restored.",finding_categories:"Licensing / registration; Licence restored / suspension revoked",action_taken:"licence suspended",closure_status:"Licence restored",verification_status:"Official source",source_name:"Demo source",source_type:"Official",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-09-18"},
- {incident_id:"DEMO-004",restaurant_name:"Sample Eatery A (fictional)",city:"Hyderabad",state:"Telangana",date_reported:"2026-08-02",authority:"GHMC",finding:"Placeholder: earlier inspection reported poor hygiene in the storage area.",finding_categories:"Poor hygiene / sanitation",action_taken:"notice issued",verification_status:"News report — corroboration recommended",source_name:"Demo news source",source_type:"News",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-08-03"}
+ {incident_id:"DEMO-001",restaurant_name:"Sample Eatery A (fictional)",location:"Madhapur",city:"Hyderabad",state:"Telangana",date_reported:"2026-09-20",date_inspection:"2026-09-19",authority:"Telangana Standards Authority for Food and Essential Drugs (TG SAFE)",finding:"Placeholder: inspectors reported stored items past expiry and pest activity in the kitchen.",finding_categories:"Expired food; Pest infestation",action_taken:"Notice issued; samples collected",samples_collected:"2",closure_status:"Awaiting follow-up",verification_status:"Official source",source_name:"Demo source",source_type:"Official",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-09-24"},
+ {incident_id:"DEMO-002",restaurant_name:"Sample Kitchen B (fictional)",city:"Pune",state:"Maharashtra",date_reported:"2026-09-15",date_inspection:"2026-09-19",authority:"FSSAI",finding:"Placeholder: follow-up inspection found earlier issues rectified.",finding_categories:"Corrective action completed; Poor hygiene / sanitation",action_taken:"Inspection",closure_status:"Closed — compliant",verification_status:"News report — corroboration recommended",source_name:"Demo news source",source_type:"News",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-09-22"},
+ {incident_id:"DEMO-003",restaurant_name:"Sample Café C (fictional)",city:"Kochi",state:"Kerala",date_reported:"2026-09-10",authority:"Commissionerate of Food Safety",finding:"Placeholder: licence suspended over missing registration; later restored.",finding_categories:"Licensing / registration; Licence restored / suspension revoked",action_taken:"Licence suspended",closure_status:"Licence restored",verification_status:"Official source",source_name:"Demo source",source_type:"Official",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-09-18"},
+ {incident_id:"DEMO-004",restaurant_name:"Sample Eatery A (fictional)",location:"Madhapur",city:"Hyderabad",state:"Telangana",date_reported:"2026-08-02",authority:"GHMC",finding:"Placeholder: earlier inspection reported poor hygiene in the storage area.",finding_categories:"Poor hygiene / sanitation",action_taken:"Notice issued",verification_status:"News report — corroboration recommended",source_name:"Demo news source",source_type:"News",source_url:"",evidence_excerpt:"Fictional excerpt used only to preview the layout.",last_updated:"2026-08-03"}
 ];
 if(new URLSearchParams(location.search).has("demo")){$("demoBanner").hidden=false;init(DEMO);return}
 
