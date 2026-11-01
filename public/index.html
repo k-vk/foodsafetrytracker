@@ -234,7 +234,7 @@ footer .wrap{max-width:1480px}
           <li>Records are updated daily at 08:00 IST.</li>
           <li>Official-source records are published directly.</li>
           <li>News-based records are published only when they show an explicit regulatory action and a specific finding; they are marked "corroboration recommended".</li>
-          <li>New news articles are read by an AI model that lists each named establishment and what the article reports about it. A record is published only if the establishment's name appears in the article and a city and state are given; quotes are kept only when they match the article word for word. These rows are tagged "Auto-extracted" until a person reviews them.</li>
+          <li>New news articles are processed automatically: rules pick out the establishments an article names in its lists of suspended licences, closures and notices, with the area or district, the action, and any sentence describing what was found there. A record is published only if the name appears in the article and a city and state can be identified; the quoted evidence is always the article's own sentence. These rows are tagged "Auto-extracted" until a person reviews them, and establishments described only in free prose are not picked up.</li>
           <li>Uncertain items are held in a <a href="review.html">review queue</a> and are not shown here.</li>
           <li>Where a source gives no inspection date, the table shows the date the source reported the action.</li>
         </ul>
@@ -295,7 +295,8 @@ let data=[],state={q:"",st:"",src:"",type:"",cat:"",sort:"new"},shown=PAGE,group
 // Unnamed establishments are never grouped, since they may be different premises.
 const norm=s=>String(s||"").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g,"");
 const GENERIC=/\b(the|and|hotel|restaurant|restaurants|cafe|bar)\b|&/g;
-const nameKey=s=>{const t=String(s||"").replace(/\(.*?\)/g," ").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g,"");return norm(t.replace(GENERIC," "))||norm(s)};
+const CORP_WORDS=/\b(pvt|private|ltd|limited|llp|group of hotels|m\/s)\b\.?/g;
+const nameKey=s=>{const t=String(s||"").replace(/\(.*?\)/g," ").toLowerCase().replace(/udipi/g,"udupi").replace(CORP_WORDS," ").normalize("NFKD").replace(/[̀-ͯ]/g,"");return norm(t.replace(GENERIC," "))||norm(s)};
 const estKey=r=>/name not published|unnamed/i.test(r.restaurant_name||"")||!norm(r.restaurant_name)?"id:"+r.incident_id:nameKey(r.restaurant_name)+"|"+norm(r.city||r.state);
 function buildGroups(){
   groups=new Map();byId=new Map();
@@ -347,7 +348,7 @@ function row(r,i){
     ${td("Action taken",esc(r.action_taken)||NR)}
     ${td("Authority",authority(r.authority)||NR)}
     ${td("Follow-up status",esc(r.closure_status)||NR)}
-    ${td("Source",`${sourceLink(r)}<span class="sub">${esc(typeLabel(r.source_type))}</span>${isAuto(r)?'<span class="pill auto" title="Extracted automatically from the article by AI and not yet reviewed by a person. Check the source.">Auto-extracted</span>':""}`,"src")}
+    ${td("Source",`${sourceLink(r)}<span class="sub">${esc(typeLabel(r.source_type))}</span>${isAuto(r)?'<span class="pill auto" title="Extracted automatically from the article and not yet reviewed by a person. Check the source.">Auto-extracted</span>':""}`,"src")}
   </tr>`;
 }
 

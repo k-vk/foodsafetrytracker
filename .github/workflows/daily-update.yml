@@ -43,9 +43,9 @@ jobs:
         if: github.event_name != 'push'
         run: python scripts/update_tracker.py
 
-      # Turns queued news articles into records with Claude. Skips itself when the
-      # ANTHROPIC_API_KEY repository secret is not set.
-      - name: Extract records from queued news with Claude
+      # Turns queued news articles into records: rule-based by default, Claude when the
+      # optional ANTHROPIC_API_KEY repository secret is set.
+      - name: Extract records from queued news
         if: github.event_name != 'push'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

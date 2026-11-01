@@ -1,13 +1,13 @@
-"""Turn queued news articles into published records with Claude.
+"""Turn queued news articles into published records.
 
 update_tracker.py puts every news article it finds into data/review_queue.csv, because a headline is
 not a record: it rarely names one establishment with a location. This script reads each new queued
-article, asks Claude to list the establishments it reports an inspection or regulatory action
-against, checks every answer against the article text, and publishes what passes as
-"Auto-extracted" records. Articles are logged in data/extraction_log.json so each is sent to the API
-at most once.
+article, lists the establishments it reports an inspection or regulatory action against, checks every
+result against the article text, and publishes what passes as "Auto-extracted" records. Articles are
+logged in data/extraction_log.json so each is processed once.
 
-Needs ANTHROPIC_API_KEY; without it the script does nothing and exits cleanly.
+Extraction uses fixed rules (scripts/rule_extract.py) by default. If ANTHROPIC_API_KEY is set, Claude is
+used instead, which also catches establishments named in free prose.
 """
 import csv, json, os, re, sys, unicodedata
 from datetime import date, datetime, timedelta
@@ -23,10 +23,11 @@ REVIEW_CSV, REVIEW_JSON = DATA / "review_queue.csv", PUBLIC / "review_queue.json
 LOG_PATH = DATA / "extraction_log.json"
 
 MODEL = "claude-opus-5-5"
-MAX_ARTICLES = int(os.environ.get("MAX_ARTICLES", "15"))   # per run, to bound cost
+MAX_ARTICLES = int(os.environ.get("MAX_ARTICLES", "15"))   # per run with Claude, to bound cost
 MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS", "30"))   # ignore older queued articles
 MAX_CHARS = 100_000                                         # guard against pathological pages
 AUTO = "Auto-extracted from news report — not reviewed"
+AUTO_RULES = "Auto-extracted (rule-based) from news report — not reviewed"
 
 FIELDS = ["incident_id","restaurant_name","location","city","state","date_reported","date_inspection",
           "authority","finding","finding_categories","action_taken","samples_collected","closure_status",
@@ -104,9 +105,13 @@ def norm(s):
     return re.sub(r"[^a-z0-9]", "", unicodedata.normalize("NFKD", (s or "").lower()))
 
 GENERIC = re.compile(r"\b(the|and|hotel|restaurant|restaurants|cafe|bar)\b|&")
+# Company suffixes differ between outlets ("Vivera Pvt Ltd" / "Vivera Private Limited"), so they are ignored too.
+CORP_WORDS = re.compile(r"\b(pvt|private|ltd|limited|llp|group of hotels|m/s)\b\.?")
 def name_key(name):
     """Same establishment matching as the site: ignore bracketed operator names and generic words."""
     t = unicodedata.normalize("NFKD", re.sub(r"\(.*?\)", " ", name or "").lower())
+    t = re.sub(r"^(.+?)[’'](?:s)?\s+", "", t) if CORP_WORDS.search(t.split("’")[0].split("'")[0]) else t  # "op llp's brand"
+    t = CORP_WORDS.sub(" ", t.replace("udipi", "udupi"))
     return norm(GENERIC.sub(" ", t)) or norm(name)
 
 def event_date(r):
@@ -156,23 +161,22 @@ def extract(client, item, text):
     return json.loads(out)["records"], resp.usage
 
 def main():
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        # "::warning" shows as a yellow annotation on the GitHub Actions run, so a missing key is visible.
-        queued = len(load_csv(REVIEW_CSV))
-        print("::warning title=AI extraction skipped::The ANTHROPIC_API_KEY repository secret is not set, "
-              f"so {queued} queued news article(s) are not being turned into records. "
-              "Add it under Settings > Secrets and variables > Actions.")
-        return
-    import anthropic
-    client = anthropic.Anthropic()
+    use_ai = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    if use_ai:
+        import anthropic
+        client = anthropic.Anthropic()
+        status = AUTO
+    else:
+        import rule_extract
+        status = AUTO_RULES
 
     rows, review = load_csv(CSV_PATH), load_csv(REVIEW_CSV)
     log = json.loads(LOG_PATH.read_text(encoding="utf-8")) if LOG_PATH.exists() else {}
     cutoff = (date.today() - timedelta(days=MAX_AGE_DAYS)).isoformat()
     todo = [r for r in review if r["source_url"] and r["source_url"] not in log and r.get("date_reported", "") >= cutoff]
     todo.sort(key=lambda r: r.get("date_reported", ""), reverse=True)
-    todo = todo[:MAX_ARTICLES]
-    print(f"{len(todo)} queued article(s) to extract.")
+    if use_ai: todo = todo[:MAX_ARTICLES]  # rules cost nothing, so they take the whole backlog
+    print(f"{len(todo)} queued article(s) to extract with {'Claude' if use_ai else 'rules'}.")
 
     ids = [int(m.group(1)) for r in rows if (m := re.match(r"FS-\d{4}-(\d+)$", r["incident_id"]))]
     n = max(ids, default=0)
@@ -192,14 +196,17 @@ def main():
         if len(text) > MAX_CHARS:
             print(f"  long page truncated to {MAX_CHARS} chars: {url}")
             text = text[:MAX_CHARS]
-        try:
-            found, usage = extract(client, item, text)
-        except (anthropic.AuthenticationError, anthropic.PermissionDeniedError, anthropic.BadRequestError, anthropic.NotFoundError):
-            raise  # a bad key or a malformed request is a setup problem: fail the run visibly
-        except (anthropic.RateLimitError, anthropic.APIStatusError, anthropic.APIConnectionError, RuntimeError) as e:
-            print(f"  extraction failed, will retry next run: {url} ({e})")
-            continue
-        tokens_in += usage.input_tokens; tokens_out += usage.output_tokens
+        if not use_ai:
+            found = rule_extract.extract(text, item.get("date_reported", ""), item.get("finding") or item.get("restaurant_name", ""))
+        else:
+            try:
+                found, usage = extract(client, item, text)
+            except (anthropic.AuthenticationError, anthropic.PermissionDeniedError, anthropic.BadRequestError, anthropic.NotFoundError):
+                raise  # a bad key or a malformed request is a setup problem: fail the run visibly
+            except (anthropic.RateLimitError, anthropic.APIStatusError, anthropic.APIConnectionError, RuntimeError) as e:
+                print(f"  extraction failed, will retry next run: {url} ({e})")
+                continue
+            tokens_in += usage.input_tokens; tokens_out += usage.output_tokens
 
         tflat, kept, notes = flat(text), 0, []
         for x in found:
@@ -214,16 +221,20 @@ def main():
                 "authority": x["authority"].strip(), "finding": x["finding"].strip(),
                 "finding_categories": "; ".join(c for c in x["finding_categories"] if c in CATEGORIES),
                 "action_taken": x["action_taken"].strip(), "samples_collected": "",
-                "closure_status": x["closure_status"].strip() or "Not reported", "verification_status": AUTO,
+                "closure_status": x["closure_status"].strip() or "Not reported", "verification_status": status,
                 "source_name": item.get("source_name", ""), "source_type": item.get("source_type", "News"),
                 "source_url": url, "last_updated": today,
                 # keep the quote only if it really is in the article
                 "evidence_excerpt": f"\"{x['evidence_quote'].strip()}\"" if x["evidence_quote"].strip() and flat(x["evidence_quote"]) in tflat else "",
             }
-            # Skip if the tracker already has this establishment in this city within a week of this date.
-            k, d = (name_key(name), norm(city)), event_date(r)
+            # Skip if the tracker already has this establishment in this city within a week of this date. Names match
+            # on the brand or on the operator in brackets ("People Combine Hospitality LLP" = "7 Midway Plaza (People
+            # Combine Hospitality LLP)").
+            def keys(n):
+                return {name_key(n)} | {name_key(p) for p in re.findall(r"\(([^()]+)\)", n or "")}
+            k, d = keys(name), event_date(r)
             def same(o):
-                if (name_key(o["restaurant_name"]), norm(o["city"])) != k: return False
+                if norm(o["city"]) != norm(city) or not (keys(o["restaurant_name"]) & k): return False
                 try: return abs((date.fromisoformat(event_date(o)) - date.fromisoformat(d)).days) <= 7
                 except ValueError: return event_date(o) == d
             if any(same(o) for o in rows + added):
@@ -245,7 +256,7 @@ def main():
         review.sort(key=lambda r: (r.get("date_reported", ""), r.get("incident_id", "")), reverse=True)
         REVIEW_JSON.write_text(json.dumps(review, ensure_ascii=False, indent=2), encoding="utf-8")
         LOG_PATH.write_text(json.dumps(log, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
-    print(f"Auto-extracted {len(added)} record(s); tokens in {tokens_in}, out {tokens_out}.")
+    print(f"Auto-extracted {len(added)} record(s)" + (f"; tokens in {tokens_in}, out {tokens_out}." if use_ai else " with rules."))
 
 if __name__ == "__main__":
     sys.exit(main())
