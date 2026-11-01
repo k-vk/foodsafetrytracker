@@ -31,6 +31,24 @@
     "processed": "2026-11-01",
     "records": 0
   },
+  "https://hyderabadmail.com/taj-falaknuma-golconda-hotel-food-safety-notices/": {
+    "processed": "2026-11-01",
+    "records": 15
+  },
+  "https://hyderabadmail.com/tg-safe-suspends-14-hyderabad-food-outlet-licences/": {
+    "processed": "2026-11-01",
+    "records": 6,
+    "skipped": [
+      "already recorded: 'Hotel Sri Raghavendra Udupi Veg'",
+      "already recorded: 'Lucky Restaurant'",
+      "already recorded: 'Shah Ghouse Cafe'",
+      "already recorded: 'Hotel Nayaab'",
+      "already recorded: 'Sri Balaji Family Dhaba'",
+      "already recorded: 'Siddique Kabab Central Kitchen'",
+      "already recorded: 'Taj Falaknuma Palace'",
+      "already recorded: 'Golconda Hotel and Resorts'"
+    ]
+  },
   "https://indianmasterminds.com/news/bihar-food-safety-inspection-blinkit-patna-2026-244931/": {
     "processed": "2026-11-01",
     "records": 0
@@ -133,6 +151,23 @@
   "https://www.newindianexpress.com/states/telangana/2026/Oct/14/four-hyderabad-eateries-ordered-to-close-down-over-hygiene-violations": {
     "processed": "2026-11-01",
     "records": 4
+  },
+  "https://www.siasat.com/hotel-nayaab-among-14-eateries-to-shut-after-food-safety-raid-3567659/": {
+    "processed": "2026-11-01",
+    "records": 2,
+    "skipped": [
+      "already recorded: 'Taj Falaknuma Palace'",
+      "already recorded: 'Hotel Sabzi'",
+      "already recorded: 'Pista House'",
+      "already recorded: 'Sweekar Hotel'",
+      "already recorded: 'Golconda Hotel and Resorts'",
+      "already recorded: 'Imperial Multicuisine Restaurant'",
+      "already recorded: 'Taiba Bakery'",
+      "already recorded: 'Hotel Sri Raghavendra Udupi Veg'",
+      "already recorded: 'Lucky Restaurant'",
+      "already recorded: 'Shah Ghouse Cafe'",
+      "already recorded: 'Hotel Nayaab'"
+    ]
   },
   "https://www.thehindu.com/news/cities/Hyderabad/tg-safe-suspends-fssai-licences-of-four-hyderabad-eateries-over-food-safety-violations/article71579974.ece": {
     "processed": "2026-11-01",
