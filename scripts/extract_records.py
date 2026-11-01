@@ -157,7 +157,11 @@ def extract(client, item, text):
 
 def main():
     if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY not set; skipping AI extraction.")
+        # "::warning" shows as a yellow annotation on the GitHub Actions run, so a missing key is visible.
+        queued = len(load_csv(REVIEW_CSV))
+        print("::warning title=AI extraction skipped::The ANTHROPIC_API_KEY repository secret is not set, "
+              f"so {queued} queued news article(s) are not being turned into records. "
+              "Add it under Settings > Secrets and variables > Actions.")
         return
     import anthropic
     client = anthropic.Anthropic()
