@@ -1,4 +1,8 @@
 {
+  "https://aliceblueonline.com/blog/india-food-safety-crackdown-fssai-rules-2026": {
+    "processed": "2026-11-02",
+    "records": 0
+  },
   "https://economictimes.indiatimes.com/industry/cons-products/food/nepal-bans-import-sales-of-indian-biscuit-priyagold-over-food-safety-violations/articleshow/135048282.cms?from=mdr": {
     "processed": "2026-11-01",
     "records": 0
@@ -30,6 +34,26 @@
   "https://hospitality.economictimes.indiatimes.com/news/operations/food-and-beverages/fssai-issues-notices-to-radisson-blu-delhi-operator-flipkart-and-bigbasket-over-food-safety-violations/135007310": {
     "processed": "2026-11-01",
     "records": 0
+  },
+  "https://hospitalitybizindia.com/news-track/food-safety-violations-14-hyderabad-eateries-lose-fssai-licences/": {
+    "processed": "2026-11-02",
+    "records": 0,
+    "skipped": [
+      "already recorded: 'Taj Falaknuma Palace'",
+      "already recorded: 'Hotel Nayaab'",
+      "already recorded: 'Shah Ghouse Cafe'",
+      "already recorded: 'Dine Hill Restaurant'",
+      "already recorded: 'Sohail Restaurant'",
+      "already recorded: 'Aeezebo The Royal Arabian Restaurant'",
+      "already recorded: 'Hotel Sri Raghavendra Udupi Veg'",
+      "already recorded: 'Lucky Restaurant'",
+      "already recorded: 'Sri Balaji Family Dhaba'",
+      "already recorded: 'Siddique Kabab Central Kitchen'",
+      "already recorded: 'Alsaba Hotel'",
+      "already recorded: 'Mehfil Restaurant'",
+      "already recorded: 'Hotel Akshaya Tiffins'",
+      "already recorded: 'Hotel Venkateshwara'"
+    ]
   },
   "https://hyderabadmail.com/taj-falaknuma-golconda-hotel-food-safety-notices/": {
     "processed": "2026-11-01",
@@ -140,6 +164,15 @@
   "https://www.indiatoday.in/trending-news/story/chhattisgarh-eatery-staff-wash-utensils-on-bathroom-floor-manager-cites-emergency-3010412-2026-10-06": {
     "processed": "2026-11-01",
     "records": 0
+  },
+  "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html": {
+    "processed": "2026-11-02",
+    "records": 14,
+    "skipped": [
+      "already recorded: 'Shah Ghouse'",
+      "already recorded: 'Hotel Nayaab'",
+      "already recorded: 'Shah Ghouse Cafe'"
+    ]
   },
   "https://www.mid-day.com/mumbai/mumbai-news/article/mumbai-fda-suspends-licences-of-10-food-establishments-over-alleged-hygiene-violations-23654265": {
     "processed": "2026-11-01",
