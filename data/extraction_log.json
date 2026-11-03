@@ -85,6 +85,32 @@
     "processed": "2026-11-01",
     "records": 0
   },
+  "https://munsifdaily.com/tg-safe-suspends-fssai-licences-of-14-hyderabad-eateries-over-food-safety-violations/": {
+    "processed": "2026-11-03",
+    "records": 1,
+    "skipped": [
+      "already recorded: 'Hotel Sri Raghavendra Udupi Veg (Tolichowki and Santosh Nagar)'",
+      "already recorded: 'Lucky Restaurant (Santosh Nagar)'",
+      "already recorded: 'Shah Ghouse Cafe (Shahalibanda)'",
+      "already recorded: 'Hotel Nayaab (Nayapul)'",
+      "already recorded: 'Sri Balaji Family Dhaba (Gudimalkapur)'",
+      "already recorded: 'Siddique Kabab Central Kitchen'",
+      "already recorded: 'Alsaba Hotel (Tolichowki)'",
+      "already recorded: 'Mehfil Restaurant (Dilsukhnagar)'",
+      "already recorded: 'Dine Hill Restaurant (Masab Tank)'",
+      "already recorded: 'Sohail Restaurant'",
+      "already recorded: 'Hotel Akshaya Tiffins (Malakpet)'",
+      "already recorded: 'Hotel Venkateshwara (MJR Road)'",
+      "already recorded: 'Aeezebo The Royal Arabian Restaurant (Rethibowli)'",
+      "already recorded: 'Taj Falaknuma Palace'",
+      "already recorded: 'Hotel Sabzi'",
+      "already recorded: 'Pista House'",
+      "already recorded: 'Sweekar Hotel'",
+      "already recorded: 'Golconda Hotel and Resorts'",
+      "already recorded: 'Imperial Multicuisine Restaurant'",
+      "already recorded: 'Taiba Bakery'"
+    ]
+  },
   "https://newsable.asianetnews.com/amp/business/fssai-s-expanded-scrutiny-to-hit-food-firms-restaurants-jefferies-articleshow-sz3godv": {
     "processed": "2026-11-01",
     "records": 0

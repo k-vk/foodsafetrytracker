@@ -1,5 +1,27 @@
 [
   {
+    "restaurant_name": "Mandi at 36 Arabian Kitchen",
+    "location": "",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "date_reported": "2026-11-01",
+    "date_inspection": "2026-10-31",
+    "authority": "Telangana Standards Authority for Food and Essential Drugs (TG SAFE)",
+    "finding": "Findings for this establishment were not itemised in the report.",
+    "finding_categories": "",
+    "action_taken": "Show-cause notice issued",
+    "samples_collected": "",
+    "closure_status": "Not reported",
+    "verification_status": "Auto-extracted (rule-based) from news report — not reviewed",
+    "source_name": "Munsif News 24x7",
+    "source_type": "Other",
+    "source_url": "https://munsifdaily.com/tg-safe-suspends-fssai-licences-of-14-hyderabad-eateries-over-food-safety-violations/",
+    "last_updated": "2026-11-03",
+    "evidence_excerpt": "\"Show-cause notices were served on Taj Falaknuma Palace, Hotel Sabzi, Pista House, Sweekar Hotel, Mandi at 36 Arabian Kitchen, Golconda Hotel and Resorts, Imperial Multicuisine Restaurant and Taiba Bakery.\"",
+    "incident_id": "FS-2026-0201"
+  },
+  {
+    "incident_id": "FS-2026-0200",
     "restaurant_name": "Rethibowli Taj Falaknuma Palace",
     "location": "",
     "city": "Hyderabad",
@@ -16,11 +38,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"MJR Road Hotel Venkateshwara, MJR Road Aeezebo The Royal Arabian Restaurant, Salarjung Colony, Rethibowli Taj Falaknuma Palace, Pista House among eight issued show-cause notices Apart from the 14 establishments facing licence suspension, food safety authorities issued show-cause notices to eight\"",
-    "incident_id": "FS-2026-0200"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0199",
     "restaurant_name": "MJR Road Aeezebo The Royal Arabian Restaurant",
     "location": "",
     "city": "Hyderabad",
@@ -37,11 +59,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"Nagar Dine Hill Restaurant, Masab Tank Hotel Akshaya Tiffins, MJR Road Hotel Venkateshwara, MJR Road Aeezebo The Royal Arabian Restaurant, Salarjung Colony, Rethibowli Taj Falaknuma Palace, Pista House among eight issued show-cause notices Apart from the 14 establishments facing licence\"",
-    "incident_id": "FS-2026-0199"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0198",
     "restaurant_name": "MJR Road Hotel Venkateshwara",
     "location": "",
     "city": "Hyderabad",
@@ -58,11 +80,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"Raghavendra Udupi Veg, Santosh Nagar Dine Hill Restaurant, Masab Tank Hotel Akshaya Tiffins, MJR Road Hotel Venkateshwara, MJR Road Aeezebo The Royal Arabian Restaurant, Salarjung Colony, Rethibowli Taj Falaknuma Palace, Pista House among eight issued show-cause notices Apart from the\"",
-    "incident_id": "FS-2026-0198"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0197",
     "restaurant_name": "Masab Tank Hotel Akshaya Tiffins",
     "location": "",
     "city": "Hyderabad",
@@ -79,11 +101,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"Alsaba Hotel, Tolichowki Hotel Sri Raghavendra Udupi Veg, Santosh Nagar Dine Hill Restaurant, Masab Tank Hotel Akshaya Tiffins, MJR Road Hotel Venkateshwara, MJR Road Aeezebo The Royal Arabian Restaurant, Salarjung Colony, Rethibowli Taj Falaknuma Palace, Pista House among eight issued\"",
-    "incident_id": "FS-2026-0197"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0196",
     "restaurant_name": "Santosh Nagar Dine Hill Restaurant",
     "location": "",
     "city": "Hyderabad",
@@ -100,11 +122,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"Siddique Kabab Central Kitchen, Gudimalkapur Alsaba Hotel, Tolichowki Hotel Sri Raghavendra Udupi Veg, Santosh Nagar Dine Hill Restaurant, Masab Tank Hotel Akshaya Tiffins, MJR Road Hotel Venkateshwara, MJR Road Aeezebo The Royal Arabian Restaurant, Salarjung Colony, Rethibowli Taj Falaknuma Palace,\"",
-    "incident_id": "FS-2026-0196"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0195",
     "restaurant_name": "Tolichowki Hotel Sri Raghavendra Udupi Veg",
     "location": "",
     "city": "Hyderabad",
@@ -121,11 +143,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"Balaji Family Dhaba , Gudi Malkapur Siddique Kabab Central Kitchen, Gudimalkapur Alsaba Hotel, Tolichowki Hotel Sri Raghavendra Udupi Veg, Santosh Nagar Dine Hill Restaurant, Masab Tank Hotel Akshaya Tiffins, MJR Road Hotel Venkateshwara, MJR Road Aeezebo The Royal Arabian Restaurant,\"",
-    "incident_id": "FS-2026-0195"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0194",
     "restaurant_name": "Gudimalkapur Alsaba Hotel",
     "location": "",
     "city": "Hyderabad",
@@ -142,11 +164,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"Road, Tolichowki Sri Balaji Family Dhaba , Gudi Malkapur Siddique Kabab Central Kitchen, Gudimalkapur Alsaba Hotel, Tolichowki Hotel Sri Raghavendra Udupi Veg, Santosh Nagar Dine Hill Restaurant, Masab Tank Hotel Akshaya Tiffins, MJR Road Hotel Venkateshwara, MJR Road Aeezebo The\"",
-    "incident_id": "FS-2026-0194"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0193",
     "restaurant_name": "Gudi Malkapur Siddique Kabab Central Kitchen",
     "location": "",
     "city": "Hyderabad",
@@ -163,11 +185,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"Sri Raghavendra Udupi Veg, Brindavan Colony Road, Tolichowki Sri Balaji Family Dhaba , Gudi Malkapur Siddique Kabab Central Kitchen, Gudimalkapur Alsaba Hotel, Tolichowki Hotel Sri Raghavendra Udupi Veg, Santosh Nagar Dine Hill Restaurant, Masab Tank Hotel Akshaya Tiffins, MJR Road\"",
-    "incident_id": "FS-2026-0193"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0192",
     "restaurant_name": "Tolichowki Sri Balaji Family Dhaba",
     "location": "",
     "city": "Hyderabad",
@@ -184,11 +206,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"Restaurant, Dilsukhnagar Sohail Restaurant, Malakpet Hotel Sri Raghavendra Udupi Veg, Brindavan Colony Road, Tolichowki Sri Balaji Family Dhaba , Gudi Malkapur Siddique Kabab Central Kitchen, Gudimalkapur Alsaba Hotel, Tolichowki Hotel Sri Raghavendra Udupi Veg, Santosh Nagar Dine Hill Restaurant, Masab\"",
-    "incident_id": "FS-2026-0192"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0191",
     "restaurant_name": "Malakpet Hotel Sri Raghavendra Udupi Veg",
     "location": "",
     "city": "Hyderabad",
@@ -205,11 +227,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"Shahalibanda Hotel Nayaab, Nayapool Lucky Restaurant, Santosh Nagar Mehfil Restaurant, Dilsukhnagar Sohail Restaurant, Malakpet Hotel Sri Raghavendra Udupi Veg, Brindavan Colony Road, Tolichowki Sri Balaji Family Dhaba , Gudi Malkapur Siddique Kabab Central Kitchen, Gudimalkapur Alsaba Hotel, Tolichowki Hotel Sri\"",
-    "incident_id": "FS-2026-0191"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0190",
     "restaurant_name": "Dilsukhnagar Sohail Restaurant",
     "location": "",
     "city": "Hyderabad",
@@ -226,11 +248,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"Shah Ghouse Cafe, Shahalibanda Hotel Nayaab, Nayapool Lucky Restaurant, Santosh Nagar Mehfil Restaurant, Dilsukhnagar Sohail Restaurant, Malakpet Hotel Sri Raghavendra Udupi Veg, Brindavan Colony Road, Tolichowki Sri Balaji Family Dhaba , Gudi Malkapur Siddique Kabab Central Kitchen, Gudimalkapur Alsaba Hotel,\"",
-    "incident_id": "FS-2026-0190"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0189",
     "restaurant_name": "Santosh Nagar Mehfil Restaurant",
     "location": "",
     "city": "Hyderabad",
@@ -247,11 +269,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"suspended following the inspections: Shah Ghouse Cafe, Shahalibanda Hotel Nayaab, Nayapool Lucky Restaurant, Santosh Nagar Mehfil Restaurant, Dilsukhnagar Sohail Restaurant, Malakpet Hotel Sri Raghavendra Udupi Veg, Brindavan Colony Road, Tolichowki Sri Balaji Family Dhaba , Gudi Malkapur Siddique Kabab Central\"",
-    "incident_id": "FS-2026-0189"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0188",
     "restaurant_name": "Nayapool Lucky Restaurant",
     "location": "",
     "city": "Hyderabad",
@@ -268,11 +290,11 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"had their licences suspended following the inspections: Shah Ghouse Cafe, Shahalibanda Hotel Nayaab, Nayapool Lucky Restaurant, Santosh Nagar Mehfil Restaurant, Dilsukhnagar Sohail Restaurant, Malakpet Hotel Sri Raghavendra Udupi Veg, Brindavan Colony Road, Tolichowki Sri Balaji Family Dhaba , Gudi Malkapur\"",
-    "incident_id": "FS-2026-0188"
+    "last_updated": "2026-11-02"
   },
   {
+    "incident_id": "FS-2026-0187",
     "restaurant_name": "Shahalibanda Hotel Nayaab",
     "location": "",
     "city": "Hyderabad",
@@ -289,9 +311,8 @@
     "source_name": "Livemint",
     "source_type": "Other",
     "source_url": "https://www.livemint.com/news/india/fssai-suspends-licences-of-hotel-nayaab-13-other-restaurants-in-hyderabad-taj-falaknuma-served-notices-full-list-11793537988441.html",
-    "last_updated": "2026-11-02",
     "evidence_excerpt": "\"The following establishments had their licences suspended following the inspections: Shah Ghouse Cafe, Shahalibanda Hotel Nayaab, Nayapool Lucky Restaurant, Santosh Nagar Mehfil Restaurant, Dilsukhnagar Sohail Restaurant, Malakpet Hotel Sri Raghavendra Udupi Veg, Brindavan Colony Road, Tolichowki Sri Balaji Family Dhaba\"",
-    "incident_id": "FS-2026-0187"
+    "last_updated": "2026-11-02"
   },
   {
     "incident_id": "FS-2026-0178",
