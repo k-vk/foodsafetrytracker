@@ -1,5 +1,6 @@
 [
   {
+    "incident_id": "FS-2026-0201",
     "restaurant_name": "Mandi at 36 Arabian Kitchen",
     "location": "",
     "city": "Hyderabad",
@@ -16,9 +17,8 @@
     "source_name": "Munsif News 24x7",
     "source_type": "Other",
     "source_url": "https://munsifdaily.com/tg-safe-suspends-fssai-licences-of-14-hyderabad-eateries-over-food-safety-violations/",
-    "last_updated": "2026-11-03",
     "evidence_excerpt": "\"Show-cause notices were served on Taj Falaknuma Palace, Hotel Sabzi, Pista House, Sweekar Hotel, Mandi at 36 Arabian Kitchen, Golconda Hotel and Resorts, Imperial Multicuisine Restaurant and Taiba Bakery.\"",
-    "incident_id": "FS-2026-0201"
+    "last_updated": "2026-11-03"
   },
   {
     "incident_id": "FS-2026-0200",
@@ -628,6 +628,27 @@
     "source_url": "https://hyderabadmail.com/taj-falaknuma-golconda-hotel-food-safety-notices/",
     "evidence_excerpt": "\"Manikonda residents protest pandemu vagu excavation, demand work halt An official source said inspectors found expired and mislabelled food items and pest infestation at Taj Falaknuma Palace.\"",
     "last_updated": "2026-11-01"
+  },
+  {
+    "restaurant_name": "Mandi at 36 Arabian Kitchen in Charminar",
+    "location": "",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "date_reported": "2026-10-31",
+    "date_inspection": "2026-10-31",
+    "authority": "Telangana Standards Authority for Food and Essential Drugs (TG SAFE)",
+    "finding": "Findings for this establishment were not itemised in the report.",
+    "finding_categories": "",
+    "action_taken": "Show-cause notice issued",
+    "samples_collected": "",
+    "closure_status": "Not reported",
+    "verification_status": "Auto-extracted (rule-based) from news report — not reviewed",
+    "source_name": "The Hindu",
+    "source_type": "News",
+    "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-suspended-of-14-hyderabad-restaurants-including-shah-ghouse-hotel-nayaab-taj-falaknuma-gets-show-cause-notice/article71650097.ece",
+    "last_updated": "2026-11-05",
+    "evidence_excerpt": "\"Sabzi in Charminar, Pista House Restaurant in Shahalibanda, Sweekar Hotel in Santosh Nagar, Mandi at 36 Arabian Kitchen in Charminar, Golconda Hotel and Resorts in Masab Tank, Imperial Multicuisine Restaurant in Tolichowki and Taiba Bakery in Lakdikapul.\"",
+    "incident_id": "FS-2026-0202"
   },
   {
     "incident_id": "FS-2026-0186",
