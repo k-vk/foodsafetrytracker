@@ -630,6 +630,7 @@
     "last_updated": "2026-11-01"
   },
   {
+    "incident_id": "FS-2026-0202",
     "restaurant_name": "Mandi at 36 Arabian Kitchen in Charminar",
     "location": "",
     "city": "Hyderabad",
@@ -646,9 +647,8 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-suspended-of-14-hyderabad-restaurants-including-shah-ghouse-hotel-nayaab-taj-falaknuma-gets-show-cause-notice/article71650097.ece",
-    "last_updated": "2026-11-05",
     "evidence_excerpt": "\"Sabzi in Charminar, Pista House Restaurant in Shahalibanda, Sweekar Hotel in Santosh Nagar, Mandi at 36 Arabian Kitchen in Charminar, Golconda Hotel and Resorts in Masab Tank, Imperial Multicuisine Restaurant in Tolichowki and Taiba Bakery in Lakdikapul.\"",
-    "incident_id": "FS-2026-0202"
+    "last_updated": "2026-11-05"
   },
   {
     "incident_id": "FS-2026-0186",
