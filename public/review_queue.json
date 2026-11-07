@@ -2751,6 +2751,27 @@
     "last_updated": "2026-10-27"
   },
   {
+    "incident_id": "FS-A31599887B",
+    "restaurant_name": "Mumbai's Ayub's among 4 eateries to lose licence in FDA's latest food safety crackdown",
+    "location": "",
+    "city": "",
+    "state": "",
+    "date_reported": "2026-08-26",
+    "date_inspection": "",
+    "authority": "",
+    "finding": "Mumbai's Ayub's among 4 eateries to lose licence in FDA's latest food safety crackdown - The Times of India",
+    "finding_categories": "Pest infestation; Adulteration; Temperature control; Cross-contamination / segregation; Water / ice safety; Poor hygiene / sanitation; Waste / drainage; Equipment / premises; Food-handler hygiene; Licensing / registration; Storage / packaging",
+    "action_taken": "seized; seizure; fine; inspection; raid",
+    "samples_collected": "",
+    "closure_status": "",
+    "verification_status": "News report — corroboration recommended",
+    "source_name": "The Times of India",
+    "source_type": "News",
+    "source_url": "https://timesofindia.indiatimes.com/city/mumbai/mumbais-ayubs-among-4-eateries-to-lose-licence-in-fdas-latest-food-safety-crackdown/articleshow/133527757.cms",
+    "evidence_excerpt": "Mumbai's Ayub's among 4 eateries to lose licence in FDA's latest food safety crackdown | Mumbai News - The Times of India Edition IN IN US GCC English English à¤¹à¤¿à¤¨à¥à¤¦à¥ à¤®à¤°à¤¾à¤ à¥ à²à²¨à³à²¨à²¡ à®¤à®®à®¿à®´à¯ à¦¬à¦¾à¦à¦²à¦¾ à´®à´²à´¯à´¾à´³à´ à°¤à±à°²à±à°à± àªà«àªàª°àª¾àª¤à« Weather Sign In TOI City mumbai mumbai region delhi bengaluru Hyderabad kolkata chennai Crime News agra agartala ahmedabad ajmer amaravati amritsar bareilly bhubaneswar bhopal chandigarh chhatrapati sambhajinagar coimbatore cuttack dehradun erode faridabad ghaziabad goa gurgaon guwahati hubballi imphal indore itanagar jaipur jammu jamshedpur jodhpur kanpur kochi kohima kolhapur kozhikode ludhian",
+    "last_updated": "2026-11-07"
+  },
+  {
     "incident_id": "FS-A1321C4199",
     "restaurant_name": "Cockroaches, Expired Food, Rotten Fruit: How FSSAI is Putting India's Kitchens Under the Scanner",
     "location": "",
