@@ -1,5 +1,26 @@
 [
   {
+    "incident_id": "FS-A4F75E65A6",
+    "restaurant_name": "Adulterated paneer under food safety scanner in Assam",
+    "location": "",
+    "city": "",
+    "state": "",
+    "date_reported": "2026-11-04",
+    "date_inspection": "",
+    "authority": "",
+    "finding": "Adulterated paneer under food safety scanner in Assam - The Times of India",
+    "finding_categories": "Pest infestation; Adulteration; Labelling / date-marking; Water / ice safety; Waste / drainage; Equipment / premises; Storage / packaging",
+    "action_taken": "fine; samples collected; inspection",
+    "samples_collected": "",
+    "closure_status": "",
+    "verification_status": "News report — corroboration recommended",
+    "source_name": "The Times of India",
+    "source_type": "News",
+    "source_url": "https://timesofindia.indiatimes.com/city/guwahati/adulterated-paneer-under-food-safety-scanner-in-assam/articleshow/135549486.cms",
+    "evidence_excerpt": "Adulterated paneer under food safety scanner in Assam | Guwahati News - The Times of India Edition IN IN US UK GCC English English à¤¹à¤¿à¤¨à¥à¤¦à¥ à¤®à¤°à¤¾à¤ à¥ à²à²¨à³à²¨à²¡ à®¤à®®à®¿à®´à¯ à¦¬à¦¾à¦à¦²à¦¾ à´®à´²à´¯à´¾à´³à´ à°¤à±à°²à±à°à± àªà«àªàª°àª¾àª¤à« Weather Sign In TOI City guwahati mumbai delhi bengaluru Hyderabad kolkata chennai Crime News Flight Price Tracker agra agartala ahmedabad ajmer amaravati amritsar bareilly bhubaneswar bhopal chandigarh chhatrapati sambhajinagar coimbatore cuttack dehradun erode faridabad ghaziabad goa gurgaon hubballi imphal indore itanagar jaipur jammu jamshedpur jodhpur kanpur kochi kohima kolhapur kozhikode ludhiana lucknow madurai man",
+    "last_updated": "2026-11-09"
+  },
+  {
     "incident_id": "FS-CD10A321E3",
     "restaurant_name": "Food safety violations: 14 Hyderabad eateries lose FSSAI licences",
     "location": "",
