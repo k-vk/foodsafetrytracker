@@ -42,6 +42,27 @@
     "last_updated": "2026-11-11"
   },
   {
+    "incident_id": "FS-31AE8E8A84",
+    "restaurant_name": "FSSAI seizes 3,280 tonne food items, cancels 52 licences in nationwide inspection drive",
+    "location": "",
+    "city": "",
+    "state": "",
+    "date_reported": "2026-11-08",
+    "date_inspection": "",
+    "authority": "",
+    "finding": "FSSAI seizes 3,280 tonne food items, cancels 52 licences in nationwide inspection drive - The Hindu",
+    "finding_categories": "Pest infestation; Adulteration; Water / ice safety; Licensing / registration",
+    "action_taken": "seized; inspection; raid",
+    "samples_collected": "",
+    "closure_status": "",
+    "verification_status": "News report — corroboration recommended",
+    "source_name": "The Hindu",
+    "source_type": "News",
+    "source_url": "https://www.thehindu.com/news/national/fssai-seizes-3280-tonne-food-items-cancels-52-licences-in-nationwide-inspection-drive/article71680460.ece",
+    "evidence_excerpt": "FSSAI seizes 3,280 tonne food items, cancels 52 licences in nationwide inspection drive - The Hindu You are logged in Loading... LOGOUT You don’t have any Active Subscription. Subscribe now Subscribed with another email? Logout and Login with that one. Your active subscription(s) Account subscription benefits alongside Premium Stories, Editorials, Opinions and more. Unlock these with Subscription Products you've access to Additional Subscription Benefits eBooks Webinars Newsletters Games Monthly Digest Account Settings Go to My Account Bookmarks Manage Subscriptions Need help with your subscription? customersupport@thehindu.co.in 1800 102 1878 Weather News November 9, 2026 e-Paper LOGIN Acco",
+    "last_updated": "2026-11-12"
+  },
+  {
     "incident_id": "FS-A4F75E65A6",
     "restaurant_name": "Adulterated paneer under food safety scanner in Assam",
     "location": "",
@@ -4429,5 +4450,26 @@
     "source_url": "https://www.sebastiandaily.com/restaurants/1-sebastian-restaurant-shut-down-during-health-inspections-for-march-2023-45309/",
     "evidence_excerpt": "1 Sebastian restaurant shut down during health inspections for March 2023 - Sebastian Daily Wednesday, October 7, 2026 #1 News Source Sebastian/Vero Beach News All News Business Community Crime Events Food Health Health Inspections Letters to the Editor Restaurants Schools Traffic Discover Indian River Lagoon Moving to Sebastian, Florida Skydiving in Sebastian, Florida Sebastian Riverfront Things to do in Sebastian, Florida What’s it like living in Sebastian, Florida 2024 Sebastian Business Awards Best Pubs in Sebastian Best Restaurants in Sebastian 2023 Sebastian Business Awards Best Restaurants in Sebastian Best Bars in Sebastian Best Diners in Sebastian Best Music in Sebastian Best Pizza",
     "last_updated": "2026-10-07"
+  },
+  {
+    "incident_id": "FS-BC9FFA4352",
+    "restaurant_name": "KFC Restaurant Raided In Cuttack For Serving Sub-Standard & Expired Food",
+    "location": "",
+    "city": "",
+    "state": "",
+    "date_reported": "2021-11-10",
+    "date_inspection": "",
+    "authority": "",
+    "finding": "KFC Restaurant Raided In Cuttack For Serving Sub-Standard & Expired Food - curlytales.com",
+    "finding_categories": "Pest infestation; Expired food; Spoiled / stale food; Labelling / date-marking; Water / ice safety; Poor hygiene / sanitation; Storage / packaging",
+    "action_taken": "seized; destroyed; closed; raided; raid",
+    "samples_collected": "",
+    "closure_status": "",
+    "verification_status": "News report — corroboration recommended",
+    "source_name": "curlytales.com",
+    "source_type": "Other",
+    "source_url": "https://curlytales.com/kfc-restaurant-raided-in-cuttack-for-serving-sub-standard-expired-food/",
+    "evidence_excerpt": "KFC Restaurant Raided In Cuttack For Serving Sub-Standard & Expired Food | Curly Tales Food Travel Experience Videos Trending Originals Deals CT Quickies India Middle East Global MP Tourism © 2026 - All rights reserved. Designed and developed by Fork Media Group Search Global India Middle East Home / KFC Restaurant Raided In Cuttack For Serving Sub-Standard & Expired Food by Sannjanaa Shenoyy Updated: November 10, 2021 1:15 PM Share Picture Credits: sambadenglish.com KFC outlet in Cuttack, Odisha was raided by the Cuttack Municipal Corporation for serving expired and sub-standard food. The fast-food outlet situated at Badambadi allegedly served expired bread, bun and non-vegetarian items lik",
+    "last_updated": "2026-11-12"
   }
 ]
