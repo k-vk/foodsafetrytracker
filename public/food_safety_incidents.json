@@ -1,5 +1,6 @@
 [
   {
+    "incident_id": "FS-2026-0228",
     "restaurant_name": "Zomato",
     "location": "",
     "city": "Hyderabad",
@@ -16,11 +17,11 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece",
-    "last_updated": "2026-11-19",
     "evidence_excerpt": "\"TG SAFE said the details of the four establishments whose FSSAI licences have been suspended would be shared with online food delivery platforms, including Swiggy and Zomato, for their delisting until the licences are restored.\"",
-    "incident_id": "FS-2026-0228"
+    "last_updated": "2026-11-19"
   },
   {
+    "incident_id": "FS-2026-0227",
     "restaurant_name": "Swiggy",
     "location": "",
     "city": "Hyderabad",
@@ -37,11 +38,11 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece",
-    "last_updated": "2026-11-19",
     "evidence_excerpt": "\"TG SAFE said the details of the four establishments whose FSSAI licences have been suspended would be shared with online food delivery platforms, including Swiggy and Zomato, for their delisting until the licences are restored.\"",
-    "incident_id": "FS-2026-0227"
+    "last_updated": "2026-11-19"
   },
   {
+    "incident_id": "FS-2026-0226",
     "restaurant_name": "Tatva Restaurant",
     "location": "SD Road",
     "city": "Secunderabad",
@@ -58,11 +59,11 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece",
-    "last_updated": "2026-11-19",
     "evidence_excerpt": "\"Additionally, an improvement notice will be issued to Tatva Restaurant on SD Road in Secunderabad, directing it to rectify the lapses identified during the inspection.\"",
-    "incident_id": "FS-2026-0226"
+    "last_updated": "2026-11-19"
   },
   {
+    "incident_id": "FS-2026-0225",
     "restaurant_name": "Prince Arabian Restaurant",
     "location": "Serilingampally",
     "city": "Hyderabad",
@@ -79,11 +80,11 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece",
-    "last_updated": "2026-11-19",
     "evidence_excerpt": "\"to KPN Fresh in Nizampet, Lawazat Hyderabad Wala Restaurant in Banjara Hills and Prince Arabian Restaurant in Serilingampally over serious violations.\"",
-    "incident_id": "FS-2026-0225"
+    "last_updated": "2026-11-19"
   },
   {
+    "incident_id": "FS-2026-0224",
     "restaurant_name": "Lawazat Hyderabad Wala Restaurant",
     "location": "Banjara Hills",
     "city": "Hyderabad",
@@ -100,11 +101,11 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece",
-    "last_updated": "2026-11-19",
     "evidence_excerpt": "\"Credit: Special Arrangement Showcause notices will be issued to KPN Fresh in Nizampet, Lawazat Hyderabad Wala Restaurant in Banjara Hills and Prince Arabian Restaurant in Serilingampally over serious violations.\"",
-    "incident_id": "FS-2026-0224"
+    "last_updated": "2026-11-19"
   },
   {
+    "incident_id": "FS-2026-0223",
     "restaurant_name": "KPN Fresh",
     "location": "Nizampet",
     "city": "Hyderabad",
@@ -121,11 +122,11 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece",
-    "last_updated": "2026-11-19",
     "evidence_excerpt": "\"of adulteration. | Photo Credit: Special Arrangement Showcause notices will be issued to KPN Fresh in Nizampet, Lawazat Hyderabad Wala Restaurant in Banjara Hills and Prince Arabian Restaurant in Serilingampally over serious violations.\"",
-    "incident_id": "FS-2026-0223"
+    "last_updated": "2026-11-19"
   },
   {
+    "incident_id": "FS-2026-0222",
     "restaurant_name": "Laham House",
     "location": "Jubilee Hills",
     "city": "Hyderabad",
@@ -142,11 +143,11 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece",
-    "last_updated": "2026-11-19",
     "evidence_excerpt": "\"of India (FSSAI) licences of Alpha Hotel and Stores and Lodge in Secunderabad, Laham House in Jubilee Hills and two other restaurants following inspections that revealed serious hygiene violations, including cockroach and housefly infestations, clogged drains and improper food storage.\"",
-    "incident_id": "FS-2026-0222"
+    "last_updated": "2026-11-19"
   },
   {
+    "incident_id": "FS-2026-0221",
     "restaurant_name": "Stores and Lodge",
     "location": "",
     "city": "Secunderabad",
@@ -163,11 +164,11 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece",
-    "last_updated": "2026-11-19",
     "evidence_excerpt": "\"Food Safety and Standards Authority of India (FSSAI) licences of Alpha Hotel and Stores and Lodge in Secunderabad, Laham House in Jubilee Hills and two other restaurants following inspections that revealed serious hygiene violations, including cockroach and housefly infestations, clogged\"",
-    "incident_id": "FS-2026-0221"
+    "last_updated": "2026-11-19"
   },
   {
+    "incident_id": "FS-2026-0220",
     "restaurant_name": "Alpha Hotel",
     "location": "",
     "city": "Secunderabad",
@@ -184,9 +185,8 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece",
-    "last_updated": "2026-11-19",
     "evidence_excerpt": "\"SAFE) suspended the Food Safety and Standards Authority of India (FSSAI) licences of Alpha Hotel and Stores and Lodge in Secunderabad, Laham House in Jubilee Hills and two other restaurants following inspections that revealed serious hygiene violations, including cockroach and\"",
-    "incident_id": "FS-2026-0220"
+    "last_updated": "2026-11-19"
   },
   {
     "incident_id": "FS-2026-0219",
