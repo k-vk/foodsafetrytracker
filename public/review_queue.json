@@ -1,5 +1,26 @@
 [
   {
+    "incident_id": "FS-26287B1FA4",
+    "restaurant_name": "TG SAFE suspends FSSAI licences of four Hyderabad eateries, closes two",
+    "location": "",
+    "city": "",
+    "state": "",
+    "date_reported": "2026-11-21",
+    "date_inspection": "",
+    "authority": "",
+    "finding": "TG SAFE suspends FSSAI licences of four Hyderabad eateries, closes two - Hyderabad Mail",
+    "finding_categories": "Pest infestation; Adulteration; Labelling / date-marking; Temperature control; Cross-contamination / segregation; Water / ice safety; Poor hygiene / sanitation; Waste / drainage; Equipment / premises; Food-handler hygiene; Licensing / registration",
+    "action_taken": "seized; closed; inspection",
+    "samples_collected": "",
+    "closure_status": "",
+    "verification_status": "News report — corroboration recommended",
+    "source_name": "Hyderabad Mail",
+    "source_type": "Other",
+    "source_url": "https://hyderabadmail.com/tg-safe-suspends-fssai-licences-four-hyderabad-eateries/",
+    "evidence_excerpt": "TG SAFE Suspends 4 Eateries' FSSAI Licences in Hyderabad Skip to content Search for: Fact Check Cyber Vigil Latest News Top News Pakka Local Hyderabad Ameerpet Charminar Dilsukhnagar / LBNagar Gachibowli / HITEC city Kachiguda/koti Kukatpally / Moosapet Nizampet / Bachupally Madhapur / Jubilee hills Manikonda Miyapur / Lingampally Nampally Secunderabad / Marredpally Shaikpet Tarnaka Uppal/Nagole Crime Local Politics Local Sports Gated Communities General Consumer Voice Campus Beat Culture Beat Civic Mail Listicles RWAs/Colonies School Mail Offbeat Notice Board Real Estate Web Stories Hyderabad Telangana Top News TG SAFE suspends FSSAI licences of four Hyderabad eateries, closes two Subhransu",
+    "last_updated": "2026-11-21"
+  },
+  {
     "incident_id": "FS-0FB637DFA5",
     "restaurant_name": "Red Bull’s ‘Energy Drink’ Label Is Misleading? FSSAI Raises Concerns Over Sugar Content",
     "location": "",

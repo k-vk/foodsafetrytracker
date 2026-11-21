@@ -77,6 +77,10 @@
       "already recorded: 'Golconda Hotel and Resorts'"
     ]
   },
+  "https://hyderabadmail.com/tg-safe-suspends-fssai-licences-four-hyderabad-eateries/": {
+    "processed": "2026-11-21",
+    "records": 0
+  },
   "https://indianmasterminds.com/news/bihar-food-safety-inspection-blinkit-patna-2026-244931/": {
     "processed": "2026-11-01",
     "records": 0
@@ -260,6 +264,15 @@
       "already recorded: 'Hotel Nayaab'"
     ]
   },
+  "https://www.siasat.com/licences-of-matam-al-yamani-madhapur-bawarchi-halted-over-food-hygiene-3582899/": {
+    "processed": "2026-11-21",
+    "records": 4,
+    "skipped": [
+      "already recorded: 'Raju Gari Biryani'",
+      "already recorded: 'Swaad Spicy'",
+      "already recorded: 'Mehfil Restaurant'"
+    ]
+  },
   "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece": {
     "processed": "2026-11-19",
     "records": 9
@@ -289,6 +302,10 @@
       "already recorded: 'Tum Yum Innovisions'",
       "already recorded: 'LO Fresh Foods'"
     ]
+  },
+  "https://www.thehindu.com/news/cities/Hyderabad/telangana-safe-suspends-fssai-licences-of-four-hyderabad-eateries-over-food-safety-violations/article71727546.ece": {
+    "processed": "2026-11-21",
+    "records": 3
   },
   "https://www.thehindu.com/news/cities/Hyderabad/tg-safe-suspends-fssai-licences-of-four-hyderabad-eateries-over-food-safety-violations/article71579974.ece": {
     "processed": "2026-11-01",
