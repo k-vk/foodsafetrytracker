@@ -1,5 +1,6 @@
 [
   {
+    "incident_id": "FS-2026-0235",
     "restaurant_name": "Annapurna Caterers",
     "location": "Chandanagar",
     "city": "Hyderabad",
@@ -16,11 +17,11 @@
     "source_name": "The Siasat Daily",
     "source_type": "Other",
     "source_url": "https://www.siasat.com/licences-of-matam-al-yamani-madhapur-bawarchi-halted-over-food-hygiene-3582899/",
-    "last_updated": "2026-11-21",
     "evidence_excerpt": "\"Annapurna Caterers was found to have pest activity, cobwebs, smoke-stained walls and unhygienic ice-cream storage boxes.\"",
-    "incident_id": "FS-2026-0235"
+    "last_updated": "2026-11-21"
   },
   {
+    "incident_id": "FS-2026-0234",
     "restaurant_name": "Mataam Al Yamani Arabian Restaurant",
     "location": "Tolichowki",
     "city": "Hyderabad",
@@ -37,11 +38,11 @@
     "source_name": "The Siasat Daily",
     "source_type": "Other",
     "source_url": "https://www.siasat.com/licences-of-matam-al-yamani-madhapur-bawarchi-halted-over-food-hygiene-3582899/",
-    "last_updated": "2026-11-21",
     "evidence_excerpt": "\"The establishments whose licences were suspended include Madhapur Bawarchi at Ayyappa Society, The Spice Kitchen in Kukatpally , Mataam Al Yamani Arabian Restaurant in Tolichowki and Annapurna Caterers in Chandanagar.\"",
-    "incident_id": "FS-2026-0234"
+    "last_updated": "2026-11-21"
   },
   {
+    "incident_id": "FS-2026-0233",
     "restaurant_name": "Spice Kitchen",
     "location": "Kukatpally",
     "city": "Hyderabad",
@@ -58,11 +59,11 @@
     "source_name": "The Siasat Daily",
     "source_type": "Other",
     "source_url": "https://www.siasat.com/licences-of-matam-al-yamani-madhapur-bawarchi-halted-over-food-hygiene-3582899/",
-    "last_updated": "2026-11-21",
     "evidence_excerpt": "\"Inspections revealed rat droppings in the storeroom of The Spice Kitchen, a cockroach infestation and improper segregation of vegetarian and non-vegetarian food.\"",
-    "incident_id": "FS-2026-0233"
+    "last_updated": "2026-11-21"
   },
   {
+    "incident_id": "FS-2026-0232",
     "restaurant_name": "Madhapur Bawarchi",
     "location": "Ayyappa Society",
     "city": "Hyderabad",
@@ -79,11 +80,11 @@
     "source_name": "The Siasat Daily",
     "source_type": "Other",
     "source_url": "https://www.siasat.com/licences-of-matam-al-yamani-madhapur-bawarchi-halted-over-food-hygiene-3582899/",
-    "last_updated": "2026-11-21",
     "evidence_excerpt": "\"Madhapur Bawarchi was found to have an unhygienic kitchen, a greasy chimney, a cockroach infestation and gutka stains on walls.\"",
-    "incident_id": "FS-2026-0232"
+    "last_updated": "2026-11-21"
   },
   {
+    "incident_id": "FS-2026-0231",
     "restaurant_name": "Swaad Spicy",
     "location": "Nagole",
     "city": "Hyderabad",
@@ -100,11 +101,11 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/telangana-safe-suspends-fssai-licences-of-four-hyderabad-eateries-over-food-safety-violations/article71727546.ece",
-    "last_updated": "2026-11-21",
     "evidence_excerpt": "\"Additionally, show-cause notices will also be issued to four establishments, including Raju Gari Biryani in Chaithanyapuri and Swaad Spicy in Nagole, over serious violations.\"",
-    "incident_id": "FS-2026-0231"
+    "last_updated": "2026-11-21"
   },
   {
+    "incident_id": "FS-2026-0230",
     "restaurant_name": "Raju Gari Biryani",
     "location": "Chaithanyapuri",
     "city": "Hyderabad",
@@ -121,11 +122,11 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/telangana-safe-suspends-fssai-licences-of-four-hyderabad-eateries-over-food-safety-violations/article71727546.ece",
-    "last_updated": "2026-11-21",
     "evidence_excerpt": "\"Additionally, show-cause notices will also be issued to four establishments, including Raju Gari Biryani in Chaithanyapuri and Swaad Spicy in Nagole, over serious violations.\"",
-    "incident_id": "FS-2026-0230"
+    "last_updated": "2026-11-21"
   },
   {
+    "incident_id": "FS-2026-0229",
     "restaurant_name": "Mehfil Restaurant",
     "location": "Balkampet",
     "city": "Hyderabad",
@@ -142,9 +143,8 @@
     "source_name": "The Hindu",
     "source_type": "News",
     "source_url": "https://www.thehindu.com/news/cities/Hyderabad/telangana-safe-suspends-fssai-licences-of-four-hyderabad-eateries-over-food-safety-violations/article71727546.ece",
-    "last_updated": "2026-11-21",
     "evidence_excerpt": "\"An improvement notice will be issued to Mehfil Restaurant in Balkampet, directing it to rectify the lapses identified during the inspection.\"",
-    "incident_id": "FS-2026-0229"
+    "last_updated": "2026-11-21"
   },
   {
     "incident_id": "FS-2026-0228",
