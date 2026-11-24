@@ -231,6 +231,10 @@
     "processed": "2026-11-01",
     "records": 0
   },
+  "https://www.indiatoday.in/cities/pune/story/pune-vaishali-roopali-restaurants-licences-suspended-after-maharashtra-fda-raids-3038707-2026-11-14": {
+    "processed": "2026-11-24",
+    "records": 4
+  },
   "https://www.indiatoday.in/trending-news/story/chhattisgarh-eatery-staff-wash-utensils-on-bathroom-floor-manager-cites-emergency-3010412-2026-10-06": {
     "processed": "2026-11-01",
     "records": 0
@@ -250,6 +254,10 @@
     "skipped": [
       "already recorded: 'Golden Star Restaurant'"
     ]
+  },
+  "https://www.nationpathindia.com/national/maharashtra-withdraws-plea-centre-fssai-food-safety-powers": {
+    "processed": "2026-11-24",
+    "records": 0
   },
   "https://www.newindianexpress.com/states/telangana/2026/Oct/14/four-hyderabad-eateries-ordered-to-close-down-over-hygiene-violations": {
     "processed": "2026-11-01",
@@ -279,6 +287,17 @@
       "already recorded: 'Raju Gari Biryani'",
       "already recorded: 'Swaad Spicy'",
       "already recorded: 'Mehfil Restaurant'"
+    ]
+  },
+  "https://www.siasat.com/tg-safe-raids-hostels-restaurants-in-hyderabad-orders-shut-down-3580632/": {
+    "processed": "2026-11-24",
+    "records": 5,
+    "skipped": [
+      "already recorded: 'Spice Kitchen Restaurant'",
+      "already recorded: 'Laham House'",
+      "already recorded: 'KPN Fresh'",
+      "already recorded: 'Lawazat Hyderabad Wala Restaurant'",
+      "already recorded: 'Prince Arabian Restaurant'"
     ]
   },
   "https://www.thehindu.com/news/cities/Hyderabad/fssai-licences-of-four-restaurants-in-hyderabad-suspended-over-food-safety-violations/article71716456.ece": {
