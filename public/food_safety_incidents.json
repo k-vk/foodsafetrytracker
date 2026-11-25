@@ -147,6 +147,7 @@
     "last_updated": "2026-11-21"
   },
   {
+    "incident_id": "FS-2026-0240",
     "restaurant_name": "Tatva Hotel",
     "location": "",
     "city": "Hyderabad",
@@ -163,11 +164,11 @@
     "source_name": "The Siasat Daily",
     "source_type": "Other",
     "source_url": "https://www.siasat.com/tg-safe-raids-hostels-restaurants-in-hyderabad-orders-shut-down-3580632/",
-    "last_updated": "2026-11-24",
     "evidence_excerpt": "\"An improvement notice was issued to Tatva Hotel.\"",
-    "incident_id": "FS-2026-0240"
+    "last_updated": "2026-11-24"
   },
   {
+    "incident_id": "FS-2026-0239",
     "restaurant_name": "Srinivasa Boys Hostel",
     "location": "",
     "city": "Hyderabad",
@@ -184,11 +185,11 @@
     "source_name": "The Siasat Daily",
     "source_type": "Other",
     "source_url": "https://www.siasat.com/tg-safe-raids-hostels-restaurants-in-hyderabad-orders-shut-down-3580632/",
-    "last_updated": "2026-11-24",
     "evidence_excerpt": "\"Two locations, New Blue Star Restaurant and Srinivasa Boys Hostel were operating without an FSSAI licence and were asked to close down.\"",
-    "incident_id": "FS-2026-0239"
+    "last_updated": "2026-11-24"
   },
   {
+    "incident_id": "FS-2026-0238",
     "restaurant_name": "New Blue Star Restaurant",
     "location": "",
     "city": "Hyderabad",
@@ -205,11 +206,11 @@
     "source_name": "The Siasat Daily",
     "source_type": "Other",
     "source_url": "https://www.siasat.com/tg-safe-raids-hostels-restaurants-in-hyderabad-orders-shut-down-3580632/",
-    "last_updated": "2026-11-24",
     "evidence_excerpt": "\"Two locations, New Blue Star Restaurant and Srinivasa Boys Hostel were operating without an FSSAI licence and were asked to close down.\"",
-    "incident_id": "FS-2026-0238"
+    "last_updated": "2026-11-24"
   },
   {
+    "incident_id": "FS-2026-0237",
     "restaurant_name": "Pandem Kodi Restaurant",
     "location": "",
     "city": "Hyderabad",
@@ -226,11 +227,11 @@
     "source_name": "The Siasat Daily",
     "source_type": "Other",
     "source_url": "https://www.siasat.com/tg-safe-raids-hostels-restaurants-in-hyderabad-orders-shut-down-3580632/",
-    "last_updated": "2026-11-24",
     "evidence_excerpt": "\"These include Alpha Hotel & Stores & Lodge, Spice Kitchen Restaurant, Laham House and Pandem Kodi Restaurant.\"",
-    "incident_id": "FS-2026-0237"
+    "last_updated": "2026-11-24"
   },
   {
+    "incident_id": "FS-2026-0236",
     "restaurant_name": "Alpha Hotel and Stores and Lodge",
     "location": "",
     "city": "Hyderabad",
@@ -247,9 +248,8 @@
     "source_name": "The Siasat Daily",
     "source_type": "Other",
     "source_url": "https://www.siasat.com/tg-safe-raids-hostels-restaurants-in-hyderabad-orders-shut-down-3580632/",
-    "last_updated": "2026-11-24",
     "evidence_excerpt": "\"These include Alpha Hotel & Stores & Lodge, Spice Kitchen Restaurant, Laham House and Pandem Kodi Restaurant.\"",
-    "incident_id": "FS-2026-0236"
+    "last_updated": "2026-11-24"
   },
   {
     "incident_id": "FS-2026-0228",
@@ -441,6 +441,7 @@
     "last_updated": "2026-11-19"
   },
   {
+    "incident_id": "FS-2026-0244",
     "restaurant_name": "Roopali",
     "location": "",
     "city": "Pune",
@@ -457,11 +458,11 @@
     "source_name": "India Today",
     "source_type": "Other",
     "source_url": "https://www.indiatoday.in/cities/pune/story/pune-vaishali-roopali-restaurants-licences-suspended-after-maharashtra-fda-raids-3038707-2026-11-14",
-    "last_updated": "2026-11-24",
     "evidence_excerpt": "\"Several hygiene-related shortcomings also surfaced during the FDA's inspection at Roopali restaurant.\"",
-    "incident_id": "FS-2026-0244"
+    "last_updated": "2026-11-24"
   },
   {
+    "incident_id": "FS-2026-0243",
     "restaurant_name": "Vaishali",
     "location": "",
     "city": "Pune",
@@ -478,11 +479,11 @@
     "source_name": "India Today",
     "source_type": "Other",
     "source_url": "https://www.indiatoday.in/cities/pune/story/pune-vaishali-roopali-restaurants-licences-suspended-after-maharashtra-fda-raids-3038707-2026-11-14",
-    "last_updated": "2026-11-24",
     "evidence_excerpt": "\"Nov 14, 2026 11:56 IST Edited by Mayukh Debnath Two popular Pune restaurants, Vaishali and Roopali, have had their licences suspended following inspections by food safety officials over serious hygiene and cleanliness concerns.\"",
-    "incident_id": "FS-2026-0243"
+    "last_updated": "2026-11-24"
   },
   {
+    "incident_id": "FS-2026-0242",
     "restaurant_name": "Nov 15",
     "location": "",
     "city": "Pune",
@@ -499,11 +500,11 @@
     "source_name": "India Today",
     "source_type": "Other",
     "source_url": "https://www.indiatoday.in/cities/pune/story/pune-vaishali-roopali-restaurants-licences-suspended-after-maharashtra-fda-raids-3038707-2026-11-14",
-    "last_updated": "2026-11-24",
     "evidence_excerpt": "\"By: India Today News Desk New Delhi , Nov 15, 2026 07:09 IST Last Updated Nov 15, 2026 07:09 IST Published by mayukh Nov 14, 2026 11:56 IST Edited by Mayukh Debnath Two popular Pune restaurants, Vaishali and Roopali, have\"",
-    "incident_id": "FS-2026-0242"
+    "last_updated": "2026-11-24"
   },
   {
+    "incident_id": "FS-2026-0241",
     "restaurant_name": "November 13",
     "location": "",
     "city": "Pune",
@@ -520,9 +521,8 @@
     "source_name": "India Today",
     "source_type": "Other",
     "source_url": "https://www.indiatoday.in/cities/pune/story/pune-vaishali-roopali-restaurants-licences-suspended-after-maharashtra-fda-raids-3038707-2026-11-14",
-    "last_updated": "2026-11-24",
     "evidence_excerpt": "\"toilet: Licences of two popular Pune restaurants suspended During a raid on Friday, November 13, at Pune's Vaishali restaurant, Maharashtra FDA inspectors allegedly found a tawa, used in making dosa and uttapam, kept near a men's washroom.\"",
-    "incident_id": "FS-2026-0241"
+    "last_updated": "2026-11-24"
   },
   {
     "incident_id": "FS-2026-0219",
