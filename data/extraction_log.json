@@ -31,6 +31,27 @@
     "processed": "2026-11-01",
     "records": 0
   },
+  "https://english.mathrubhumi.com/amp/lifestyle/food/laundry-whitener-paneer-adulteration-raebareli-raid-yz7qv0gp": {
+    "processed": "2026-11-26",
+    "records": 0
+  },
+  "https://facilities.economictimes.indiatimes.com/news/policy-law-compliance/fssai-licences-of-eight-cloud-kitchens-cancelled-in-hyderabad/135754498": {
+    "processed": "2026-11-26",
+    "records": 0,
+    "skipped": [
+      "already recorded: 'Biryani By Kilo'",
+      "already recorded: 'Kulcha Kulture'",
+      "already recorded: 'Lucky Multicuisine Restaurant'",
+      "already recorded: 'Tum Yum Innovisions'",
+      "already recorded: 'Zora 11 By 2'",
+      "already recorded: 'LO Fresh Foods'",
+      "already recorded: 'ITC Aashirwad Soul Creations'",
+      "already recorded: 'AVA Cloud Kitchens'",
+      "already recorded: 'Hunger Experiment'",
+      "already recorded: 'Fruitique'",
+      "already recorded: 'Rebel Foods Behrouz Biryani outlet'"
+    ]
+  },
   "https://hospitality.economictimes.indiatimes.com/news/operations/food-and-beverages/food-companies-quick-commerce-platforms-face-stricter-fssai-checks-higher-compliance-costs-jefferies/134958720": {
     "processed": "2026-11-01",
     "records": 0
@@ -41,6 +62,10 @@
   },
   "https://hospitality.economictimes.indiatimes.com/news/operations/food-and-beverages/fssai-issues-notices-to-radisson-blu-delhi-operator-flipkart-and-bigbasket-over-food-safety-violations/135007310": {
     "processed": "2026-11-01",
+    "records": 0
+  },
+  "https://hospitality.economictimes.indiatimes.com/news/operations/food-and-beverages/fssai-steps-up-inspections-takes-action-against-food-business-operators/136088174": {
+    "processed": "2026-11-26",
     "records": 0
   },
   "https://hospitalitybizindia.com/news-track/food-safety-violations-14-hyderabad-eateries-lose-fssai-licences/": {
@@ -62,6 +87,10 @@
       "already recorded: 'Hotel Akshaya Tiffins'",
       "already recorded: 'Hotel Venkateshwara'"
     ]
+  },
+  "https://hyderabadmail.com/alpha-hotel-in-secunderabad-loses-food-safety-licence-again/": {
+    "processed": "2026-11-26",
+    "records": 0
   },
   "https://hyderabadmail.com/taj-falaknuma-golconda-hotel-food-safety-notices/": {
     "processed": "2026-11-01",
@@ -88,6 +117,10 @@
   "https://indianmasterminds.com/news/bihar-food-safety-inspection-blinkit-patna-2026-244931/": {
     "processed": "2026-11-01",
     "records": 0
+  },
+  "https://kashmirlife.net/expired-ingredients-hygiene-lapses-restaurant-licence-suspended-in-south-kashmir-461553/": {
+    "processed": "2026-11-26",
+    "records": 1
   },
   "https://m.economictimes.com/news/india/fssais-food-crackdown-labels-restaurants-quick-commerce-under-scrutiny/amp_videoshow/134901198.cms": {
     "processed": "2026-11-01",
@@ -198,6 +231,10 @@
   "https://timesofindia.indiatimes.com/city/mumbai/maharashtra-fda-suspends-licences-of-17-eateries-including-3-dominos-outlets-over-food-safety-violations/articleshow/134945850.cms": {
     "processed": "2026-11-01",
     "records": 4
+  },
+  "https://timesofindia.indiatimes.com/city/patna/city-restaurant-shut-licence-suspended-over-hygiene-lapses/articleshow/136167468.cms": {
+    "processed": "2026-11-26",
+    "records": 0
   },
   "https://urbanacres.in/cockroach-allegedly-found-in-dosa-at-delhi-restaurant-fssai-tagged/": {
     "processed": "2026-11-11",
