@@ -441,6 +441,7 @@
     "last_updated": "2026-11-19"
   },
   {
+    "incident_id": "FS-2026-0245",
     "restaurant_name": "Aslam Chicken by Hi Speed Taste",
     "location": "",
     "city": "Srinagar",
@@ -457,9 +458,8 @@
     "source_name": "Kashmir Life",
     "source_type": "Other",
     "source_url": "https://kashmirlife.net/expired-ingredients-hygiene-lapses-restaurant-licence-suspended-in-south-kashmir-461553/",
-    "last_updated": "2026-11-26",
     "evidence_excerpt": "\"SRINAGAR : The Food Safety Department in Anantnag has suspended the licence of Aslam Chicken by Hi Speed Taste, a restaurant located at KP Road near the General Bus Stand, over multiple food safety and hygiene violations, including the alleged\"",
-    "incident_id": "FS-2026-0245"
+    "last_updated": "2026-11-26"
   },
   {
     "incident_id": "FS-2026-0244",
