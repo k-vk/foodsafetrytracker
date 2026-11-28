@@ -1,5 +1,26 @@
 [
   {
+    "restaurant_name": "Classic Abhiruchi Multi-Cuisine Family Restaurant",
+    "location": "Vavilalapalli",
+    "city": "Karimnagar",
+    "state": "Telangana",
+    "date_reported": "2026-11-27",
+    "date_inspection": "2026-11-27",
+    "authority": "Telangana Standards Authority for Food and Essential Drugs (TG SAFE)",
+    "finding": "Findings for this establishment were not itemised in the report.",
+    "finding_categories": "",
+    "action_taken": "FSSAI licence suspended",
+    "samples_collected": "",
+    "closure_status": "Not reported",
+    "verification_status": "Auto-extracted (rule-based) from news report — not reviewed",
+    "source_name": "The Hindu",
+    "source_type": "News",
+    "source_url": "https://www.thehindu.com/news/national/telangana/tg-safe-suspends-fssai-licence-of-classic-abhiruchi-restaurant-in-karimnagar/article71751266.ece",
+    "last_updated": "2026-11-28",
+    "evidence_excerpt": "\"ALL Remove The Food Safety and Standards Authority of India (FSSAI) licence of Classic Abhiruchi Multi-Cuisine Family Restaurant at Vavilalapalli in Karimnagar was suspended by the Telangana Standards Authority for Food and Essential Drugs (TG SAFE) for food safety and\"",
+    "incident_id": "FS-2026-0246"
+  },
+  {
     "incident_id": "FS-2026-0235",
     "restaurant_name": "Annapurna Caterers",
     "location": "Chandanagar",

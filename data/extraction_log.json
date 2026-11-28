@@ -224,13 +224,25 @@
     "processed": "2026-11-01",
     "records": 0
   },
+  "https://timesofindia.indiatimes.com/city/kolkata/food-safety-officials-close-salt-lake-restaurant-over-rotten-food/articleshow/136231556.cms": {
+    "processed": "2026-11-28",
+    "records": 0
+  },
   "https://timesofindia.indiatimes.com/city/kolkata/salt-lake-eateries-shut-after-food-safety-raid/articleshow/135176005.cms": {
     "processed": "2026-11-01",
+    "records": 0
+  },
+  "https://timesofindia.indiatimes.com/city/mumbai/fda-orders-gyms-pharmacies-to-obtain-fssai-licence-for-health-supplements-nutraceuticals/articleshow/136036939.cms": {
+    "processed": "2026-11-28",
     "records": 0
   },
   "https://timesofindia.indiatimes.com/city/mumbai/maharashtra-fda-suspends-licences-of-17-eateries-including-3-dominos-outlets-over-food-safety-violations/articleshow/134945850.cms": {
     "processed": "2026-11-01",
     "records": 4
+  },
+  "https://timesofindia.indiatimes.com/city/patna/city-restaurant-shut-licence-suspended-over-hygiene-lapses/amp_articleshow/136167468.cms": {
+    "processed": "2026-11-28",
+    "records": 0
   },
   "https://timesofindia.indiatimes.com/city/patna/city-restaurant-shut-licence-suspended-over-hygiene-lapses/articleshow/136167468.cms": {
     "processed": "2026-11-26",
@@ -450,6 +462,10 @@
       "already recorded: 'Lufyans Family Restaurant'",
       "already recorded: 'Taj Family Dhaba'"
     ]
+  },
+  "https://www.thehindu.com/news/national/telangana/tg-safe-suspends-fssai-licence-of-classic-abhiruchi-restaurant-in-karimnagar/article71751266.ece": {
+    "processed": "2026-11-28",
+    "records": 1
   },
   "https://www.timesnownews.com/business-economy/industry/150-notices-new-labelling-rules-why-fssais-crackdown-has-food-companies-on-alert-article-156344010": {
     "processed": "2026-11-01",
